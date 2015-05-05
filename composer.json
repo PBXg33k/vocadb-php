@@ -1,0 +1,17 @@
+{
+    "name": "pbxg33k/vocadb",
+    "description": "PHP API client for the VocaDB Public API (v1)",
+    "require": {
+        "guzzlehttp/guzzle": "5.2.0"
+    },
+    "require-dev": {
+        "codeception/codeception": "~2.0"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Oguzhan Uysal",
+            "email": "development@oguzhanuysal.eu"
+        }
+    ]
+}
