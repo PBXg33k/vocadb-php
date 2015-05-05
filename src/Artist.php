@@ -48,18 +48,19 @@ class Artist
 						$artist_obj->fromApi($item);
 						$artist_collection->add($artist_obj);
 					}
+				} else {
+					throw new \Exception('No results');
 				}
-				var_dump($response_obj, $artist_obj, $artist_collection);die();
 				return $artist_collection;
 				break;
 			default:
 				throw new \Exception('HTTP ERROR OCCURED');
 				break;
 		}
-		var_dump($response);
 	}
 
-	public function getByName($name) {
+	public function getByName($name)
+	{
 		return $this->get(['query' => $name]);
 	}
 }
