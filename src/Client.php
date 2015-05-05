@@ -11,6 +11,8 @@ use GuzzleHttp\Client as GuzzleClient;
  * 
  * @package pbxg33k\VocaDB
  * @author Oguzhan Uysal <development@oguzhanuysal.eu>
+ * 
+ * @version 0.1.0-dev
  */
 class Client {
 	const CLIENT_VER = "0.0.1";
@@ -54,7 +56,39 @@ class Client {
 		 * Load client
 		 */
 		$this->_client = new GuzzleClient($guzzle_config);
+	}
 
+	public function getHeaders()
+	{
+		return $this->_client->getHeaders();
+	}
+
+	public function setHeader($name, $value)
+	{
+		$this->_client->setHeader($name, $value);
+		return $this;
+	}
+
+	public function resetHeaders()
+	{
+		$this->_client->setHeaders([]);
+		return $this;
+	}
+
+	public function setContent($content)
+	{
+		$this->content = $content;
+		return $this;
+	}
+
+	public function setJsonContent($content)
+	{
+		$this->content = json_decode($content);
+		return $this;
+	}
+	public function getBody()
+	{
+		return $this->_client->getBody();
 	}
 
 	/**
