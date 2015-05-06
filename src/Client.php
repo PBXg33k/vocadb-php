@@ -17,7 +17,7 @@ use GuzzleHttp\Client as GuzzleClient;
 class Client {
 	const CLIENT_VER = "0.0.1";
 	const USER_AGENT_SUFFIX = "pgxg33k-vocadb-php-client/";
-	const API_URI = "http://vocadb.net/api";
+	private $api_url = "http://vocadb.net/api";
 
 	/**
 	 * @var pbxg33k\VocaDB\Artist
@@ -40,7 +40,7 @@ class Client {
 		}
 
 		$guzzle_config = [
-			'base_url' => self::API_URI,
+			'base_url' => $this->api_url,
 			'defaults' => [
 				'headers' => [
 					'User-Agent'=> self::USER_AGENT_SUFFIX.'/'.self::CLIENT_VER,
@@ -122,7 +122,18 @@ class Client {
 	 */
 	public function getApiUri()
 	{
-		return self::API_URI;
+		return $this->api_url;
+	}
+
+	/**
+	 * Set the API URI
+	 * 
+	 * @return object
+	 */
+	public function setApiUri($uri)
+	{
+		$this->api_url = $uri;
+		return $this;
 	}
 
 	/**
@@ -152,6 +163,6 @@ class Client {
 	 */
 	protected function buildUri($endpoint)
 	{
-		return self::API_URI.'/'.$endpoint;
+		return $this->api_url.'/'.$endpoint;
 	}
 }
