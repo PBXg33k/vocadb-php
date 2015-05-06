@@ -12,6 +12,6 @@ class Song extends Base
 
 	public function getByName($name)
 	{
-		return $this->get(['query' => $name]);
+		return $this->get('',['query' => $name]);
 	}
 }

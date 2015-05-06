@@ -5,16 +5,16 @@
 namespace pbxg33k\VocaDB;
 
 /**
- * Artist class
+ * Album class
  * 
  * @package pbxg33k\VocaDB
  * @author Oguzhan Uysal <development@oguzhanuysal.eu>
  */
-class Artist extends Base
+class Album extends Base
 {
-	public $endpoint = 'artists';
+	public $endpoint = 'albums';
 
-	public $fields = ['Description', 'Groups', 'Members', 'Names', 'Tags', 'WebLinks'];
+	// public $fields = ['Description', 'Groups', 'Members', 'Names', 'Tags', 'WebLinkizli5632s'];
 
 	public function getByName($name)
 	{
