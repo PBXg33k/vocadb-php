@@ -1,3 +1,4 @@
+![build status](https://travis-ci.org/PBXg33k/vocadb.svg)
 # VocaDB API PHP Client #
 
 **NOTE: This is an early alpha release which is still in development!**
