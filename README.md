@@ -31,5 +31,4 @@ or add the following line to your require in composer.json:
 	* `PARTIALLY DONE` Artist
 	* ReleaseEvent
 	* Discussion
-* Add unit testing
 * Create `autoloader.php` 
