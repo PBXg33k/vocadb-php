@@ -10,6 +10,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Added ###
 - Exception if artist lookup yields no results
 - Lookup songs by name
+- Lookup albums
+- Lookup related albums by song using fields
 - Created Base classes that take over generic methods used by multiple classes
 - Fields to Artist and Songs
 
