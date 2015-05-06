@@ -2,6 +2,16 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [unreleased] ##
+### Added ###
+- Unit tests for Album
+- PSR-4 autoloader added for *(clean)* usage without an existing PSR-4 compatible autoloader
+
+### Changed ###
+- `Client->get(string $endpoint, [array $arguments = []])` arguments changed
+	- First argument is the endpoint
+	- Second argument is the *(optional)* arguments
+
 ## [v0.1.1] - 2015-05-06  ##
 ### Added ###
 - Continiuous Integration

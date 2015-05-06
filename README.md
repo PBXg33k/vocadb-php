@@ -22,5 +22,14 @@ or add the following line to your require in composer.json:
 
 ## TODO ##
 * Add all missing endpoints
+	* `PARTIALLY DONE` Song
+	* Entry
+	* SongList
+	* `PARTIALLY DONE` Album
+	* User
+	* Tag
+	* `PARTIALLY DONE` Artist
+	* ReleaseEvent
+	* Discussion
 * Add unit testing
 * Create `autoloader.php` 
