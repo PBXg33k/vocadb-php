@@ -1,0 +1,12 @@
+HTTP/1.1 200 OK
+Cache-Control: no-cache
+Pragma: no-cache
+Content-Type: application/xml; charset=utf-8
+Expires: -1
+Server: Microsoft-IIS/8.5
+X-AspNet-Version: 4.0.30319
+X-Powered-By: ASP.NET
+Date: Wed, 06 May 2015 03:31:17 GMT
+Content-Length: 677
+
+<AlbumForApiContract xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://vocaloid.eu/schemas/VocaDb"><ArtistString>Tripshots feat. 初音ミク</ArtistString><CatalogNumber i:nil="true" /><CreateDate>2011-01-16T00:00:00</CreateDate><DefaultName>Synthesis</DefaultName><DefaultNameLanguage>English</DefaultNameLanguage><DiscType>Album</DiscType><Id>1</Id><Name>Synthesis</Name><RatingAverage>4.5</RatingAverage><RatingCount>6</RatingCount><ReleaseDate><Day>11</Day><Formatted>6/11/2009</Formatted><IsEmpty>false</IsEmpty><Month>6</Month><Year>2009</Year></ReleaseDate><ReleaseEvent i:nil="true" /><Status>Approved</Status><Version>9</Version></AlbumForApiContract>
