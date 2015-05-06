@@ -4,6 +4,12 @@
  */
 namespace Pbxg33k\VocaDB;
 
+/**
+ * Album class
+ * 
+ * @package pbxg33k\VocaDB
+ * @author Oguzhan Uysal <development@oguzhanuysal.eu>
+ */
 class Album extends Base
 {
 	public $endpoint = 'albums';
@@ -16,5 +22,10 @@ class Album extends Base
 		$fields = implode(',', $this->fields);
 
 		return parent::get(array_merge((array)$arguments, ['fields' => $fields]));
+	}
+
+	public function getByName($name)
+	{
+		return $this->get('',['query' => $name]);
 	}
 }

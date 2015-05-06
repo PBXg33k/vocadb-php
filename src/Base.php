@@ -44,11 +44,17 @@ class Base
                         throw new \Exception('No results');
                     }
                 }
+                
 				return $collection;
 				break;
 			default:
 				throw new \Exception('HTTP ERROR OCCURED');
 				break;
 		}
+	}
+
+	public function getById($id)
+	{
+		return $this->get(sprintf('/%s',$id));
 	}
 }
