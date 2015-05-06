@@ -7,6 +7,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - Continiuous Integration
 - unit tests
 
+### Changed ###
+- Guzzle is now a public property in `Client`
+- API Uri can now be changed by calling `Client->setApiUri(string $uri)`
+
 ## [v0.1.0] - 2015-05-06 ##
 
 ### Fixed ###
@@ -25,5 +29,6 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - Initial client release
 - Lookup artist by name
 
-[unreleased]: https://github.com/PBXg33k/vocadb-php/compare/v0.1.0...develop
+[unreleased]: https://github.com/PBXg33k/vocadb-php/compare/v0.1.1...develop
+[v0.1.1]: https://github.com/PBXg33k/vocadb-php/compare/v0.1.0...v0.1.1
 [v0.1.0]: https://github.com/PBXg33k/vocadb-php/compare/v0.0.1...v0.1.0
