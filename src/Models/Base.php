@@ -3,6 +3,7 @@ namespace pbxg33k\VocaDB\Models;
 
 class Base 
 {
+    private $nonObjectTypes = ['string', 'int', 'integer', 'bool', 'boolean', 'array', 'float'];
     /**
      * Converts an object from the api to model(s) loaded in current context
      * 
