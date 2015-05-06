@@ -20,21 +20,4 @@ class Artist extends Base
 	public $status;
 
 	public $version;
-
-	public function __construct()
-	{
-
-	}
-
-	public function fromApi($response)
-	{
-		if(is_array($response)) {
-			if(isset($response['items'])) {
-				$response = $response['items'][0];
-			}
-		}
-
-		$this->convertFromstdClass($response);
-		return $this;
-	}
 }

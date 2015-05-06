@@ -4,6 +4,24 @@ namespace pbxg33k\VocaDB\Models;
 class Base 
 {
     /**
+     * Converts an object from the api to model(s) loaded in current context
+     * 
+     * @param object $response 
+     * @return object Models extending Base
+     */
+    public function fromApi($response)
+    {
+        if(is_array($response)) {
+            if(isset($response['items'])) {
+                $response = $response['items'][0];
+            }
+        }
+
+        $this->convertFromstdClass($response);
+        return $this;
+    }
+
+    /**
      * Converts a stdClass to models loaded in current context
      * @param  object $class class
      * @return object Models extending Base (and \Phalcon\Mvc\Model)
