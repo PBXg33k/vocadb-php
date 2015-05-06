@@ -53,7 +53,6 @@ class AlbumTest extends PHPUnit_Framework_TestCase
 
 		$this->assertEquals("Tripshots feat. 初音ミク", $response->artistString);
 	}
-
 	// public function testTestServer()
 	// {
 		
