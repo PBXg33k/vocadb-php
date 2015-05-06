@@ -14,6 +14,7 @@ class Artist extends Base
 {
 	public $endpoint = 'artists';
 
+	public $fields = ['Description', 'Groups', 'Members', 'Names', 'Tags', 'WebLinks'];
 
 	public function getByName($name)
 	{
