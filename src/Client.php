@@ -24,6 +24,8 @@ class Client {
 	 */
 	public $artist;
 
+	public $song;
+
 	private $_client;
 
 	/**
@@ -51,6 +53,8 @@ class Client {
 		 * Load all objects
 		 */
 		$this->artist = new Artist($this);
+
+		$this->song = new Song($this);
 
 		/**
 		 * Load client
