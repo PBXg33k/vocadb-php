@@ -2,7 +2,7 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
-## [unreleased][unreleased] ##
+## [v0.1.0] - 2015-05-06 ##
 
 ### Fixed ###
 - Removed `var_dump` in case no hits were found
@@ -20,4 +20,5 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - Initial client release
 - Lookup artist by name
 
-[unreleased]: https://github.com/PBXg33k/vocadb-php/compare/v0.0.1...develop
+[unreleased]: https://github.com/PBXg33k/vocadb-php/compare/v0.1.0...develop
+[v0.1.0]: https://github.com/PBXg33k/vocadb-php/compare/v0.0.1...v0.1.0
