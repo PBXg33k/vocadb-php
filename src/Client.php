@@ -26,7 +26,7 @@ class Client {
 
 	public $song;
 
-	private $_client;
+	public $_client;
 
 	/**
 	 * Construct the VocaDB Client
@@ -145,7 +145,7 @@ class Client {
 	 * 
 	 * @todo Add exceptions on errors
 	 */
-	public function get($uri, $arguments)
+	public function get($uri, $arguments = null)
 	{
 		$client_args = [];
 		if($arguments)
