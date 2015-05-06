@@ -18,4 +18,4 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - Initial client release
 - Lookup artist by name
 
-[unreleased]: https://github.com/PBXg33k/vocadb-php/compare/v0.0.1...HEAD
+[unreleased]: https://github.com/PBXg33k/vocadb-php/compare/v0.0.1...develop
