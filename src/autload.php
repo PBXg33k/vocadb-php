@@ -16,11 +16,11 @@
  * @return void
  */
 spl_autoload_register(function ($class) {
-	$prefix = "pbxg33k\\VocaDB";
+    $prefix = "pbxg33k\\VocaDB";
 
-	$base_dir = __DIR__;
+    $base_dir = __DIR__;
 
-	// does the class use the namespace prefix?
+    // does the class use the namespace prefix?
     $len = strlen($prefix);
     if (strncmp($prefix, $class, $len) !== 0) {
         // no, move to the next registered autoloader
