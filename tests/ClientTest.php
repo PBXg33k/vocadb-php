@@ -40,4 +40,9 @@ class ClientTest extends PHPUnit_Framework_TestCase
 	{
 		$this->assertInstanceOf('pbxg33k\VocaDB\Song', $this->client->song);
 	}
+
+	public function testInitAlbum()
+	{
+		$this->assertInstanceOf('pbxg33k\VocaDB\Album', $this->client->album);
+	}
 }
