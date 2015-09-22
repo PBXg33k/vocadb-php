@@ -16,7 +16,7 @@
  * @return void
  */
 spl_autoload_register(function ($class) {
-    $prefix = "pbxg33k\\VocaDB";
+    $prefix = "Pbxg33k\\VocaDB";
 
     $base_dir = __DIR__;
 

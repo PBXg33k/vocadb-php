@@ -28,8 +28,6 @@ class Client {
 
 	public $song;
 
-	public $album;
-
 	public $_client;
 
 	/**

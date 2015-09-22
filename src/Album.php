@@ -7,7 +7,7 @@ namespace Pbxg33k\VocaDB;
 /**
  * Album class
  * 
- * @package pbxg33k\VocaDB
+ * @package Pbxg33k\VocaDB
  * @author Oguzhan Uysal <development@oguzhanuysal.eu>
  */
 class Album extends Base
@@ -26,6 +26,6 @@ class Album extends Base
 
 	public function getByName($name)
 	{
-		return $this->get('',['query' => $name]);
+		return $this->get(['query' => $name]);
 	}
 }

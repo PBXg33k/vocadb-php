@@ -18,7 +18,7 @@ class Artist extends Base
 
 	public function getByName($name)
 	{
-		return $this->get('',['query' => $name]);
+		return $this->get(['query' => $name]);
 	}
 
 	public function albums()
