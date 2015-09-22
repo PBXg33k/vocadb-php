@@ -37,10 +37,6 @@ class Client {
 	 */
 	public function __construct($config = null)
 	{
-		if(is_object($config) && class_implements('Pbxg33k\VocaDB\Config')) {
-
-		}
-
 		$guzzle_config = [
 			'base_url' => $this->api_url,
 			'defaults' => [
@@ -50,6 +46,11 @@ class Client {
 				]
 			]
 		];
+
+		if($config) {
+			if(isset($config['guzzle']))
+				$guzzle_config = array_merge($guzzle_config, $config['guzzle']);
+		}
 
 		/**
 		 * Load all objects
