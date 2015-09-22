@@ -31,7 +31,7 @@ class Base
 			$single->convertFromStdClass($c);
 			$return[] = $single;
 		}
-
+		$this->collection = $return;
 		return $return;
 	}
 
@@ -41,5 +41,14 @@ class Base
 		$class = end($full_class);
 
 		return sprintf('Pbxg33k\\VocaDB\\Models\\%s', substr($class, 0, strlen($class) - strlen('Collection')));
+	}
+
+	public function firstOrError()
+	{
+		if(count($this->collection)) {
+			return array_values($this->collection)[0];
+		}
+
+		throw new Exception();
 	}
 }
