@@ -18,7 +18,7 @@ class Base
             }
         }
 
-        $this->convertFromstdClass($response);
+        $this->convertFromStdClass($response);
         return $this;
     }
 
@@ -49,7 +49,7 @@ class Base
                 if ($dummy_class = $this->getClassFromDocComment($property->getDocComment())) {
                     // Check if it's a class or not
                     if (in_array(strtolower(trim($dummy_class)), $this->nonObjectTypes)) {
-                        // var_dump($dummy_class, $property_name, $class, $this);
+                        // var_dump($dummy_class, $property_name, $class, $this); die();
                         $this->$property_name = $class_property_name;
                     } else {
                         // Check if the class exist

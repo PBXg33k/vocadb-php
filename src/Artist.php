@@ -20,4 +20,9 @@ class Artist extends Base
 	{
 		return $this->get(['query' => $name]);
 	}
+
+	public function albums()
+	{
+		return $this->client->album->get(['artistId' => $this->id]);
+	}
 }

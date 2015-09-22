@@ -125,7 +125,7 @@ class Album extends Base
 
 	/**
 	 * 
-	 * @var string
+	 * @var Pbxg33k\VocaDB\Models\ReleaseEvent
 	 */
 	public $releaseEvent;
 
@@ -143,7 +143,7 @@ class Album extends Base
 
 	/**
 	 * 
-	 * @var array
+	 * @var Pbxg33k\VocaDB\Models\Collections\TrackCollection
 	 */
 	public $tracks;
 

@@ -15,7 +15,7 @@ use GuzzleHttp\Client as GuzzleClient;
  * @version 0.1.0-dev
  */
 class Client {
-	const CLIENT_VER = "0.0.1";
+	const CLIENT_VER = "0.1.0";
 	const USER_AGENT_SUFFIX = "pgxg33k-vocadb-php-client/";
 	private $api_url = "http://vocadb.net/api";
 
@@ -25,6 +25,8 @@ class Client {
 	public $artist;
 
 	public $song;
+
+	public $album;
 
 	public $_client;
 
@@ -55,6 +57,8 @@ class Client {
 		$this->artist = new Artist($this);
 
 		$this->song = new Song($this);
+
+		$this->album = new Album($this);
 
 		/**
 		 * Load client
