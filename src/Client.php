@@ -2,14 +2,14 @@
 /**
  * {LICENSE}
  */
-namespace pbxg33k\VocaDB;
+namespace Pbxg33k\VocaDB;
 
 use GuzzleHttp\Client as GuzzleClient;
 
 /**
  * VocaDB PHP Client
  * 
- * @package pbxg33k\VocaDB
+ * @package Pbxg33k\VocaDB
  * @author Oguzhan Uysal <development@oguzhanuysal.eu>
  * 
  * @version 0.1.0-dev
@@ -20,7 +20,7 @@ class Client {
 	private $api_url = "http://vocadb.net/api";
 
 	/**
-	 * @var pbxg33k\VocaDB\Artist
+	 * @var Pbxg33k\VocaDB\Artist
 	 */
 	public $artist;
 
@@ -31,11 +31,11 @@ class Client {
 	/**
 	 * Construct the VocaDB Client
 	 * 
-	 * @param pbxg33k\VocaDB\Config $config 
+	 * @param Pbxg33k\VocaDB\Config $config 
 	 */
 	public function __construct($config = null)
 	{
-		if(is_object($config) && class_implements('pbxg33k\VocaDB\Config')) {
+		if(is_object($config) && class_implements('Pbxg33k\VocaDB\Config')) {
 
 		}
 

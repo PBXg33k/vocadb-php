@@ -1,5 +1,5 @@
 <?php
-namespace pbxg33k\VocaDB\Models\Collections;
+namespace Pbxg33k\VocaDB\Models\Collections;
 
 class Base
 {
@@ -13,8 +13,8 @@ class Base
 	/**
 	 * Add item to collection
 	 * 
-	 * @param pbxg33k\VocaDB\Models\Base $item 
-	 * @return pbxg33k\VocaDB\Models\Collection\Base
+	 * @param Pbxg33k\VocaDB\Models\Base $item 
+	 * @return Pbxg33k\VocaDB\Models\Collection\Base
 	 */
 	public function add($item)
 	{
@@ -40,6 +40,6 @@ class Base
 		$full_class = explode('\\',get_called_class());
 		$class = end($full_class);
 
-		return sprintf('pbxg33k\\VocaDB\\Models\\%s', substr($class, 0, strlen($class) - strlen('Collection')));
+		return sprintf('Pbxg33k\\VocaDB\\Models\\%s', substr($class, 0, strlen($class) - strlen('Collection')));
 	}
 }

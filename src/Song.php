@@ -2,7 +2,7 @@
 /**
  * {LICENSE}
  */
-namespace pbxg33k\VocaDB;
+namespace Pbxg33k\VocaDB;
 
 class Song extends Base
 {

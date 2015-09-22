@@ -1,5 +1,5 @@
 <?php
-namespace pbxg33k\VocaDB\Models;
+namespace Pbxg33k\VocaDB\Models;
 
 class Base 
 {

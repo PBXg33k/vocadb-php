@@ -2,7 +2,7 @@
 use GuzzleHttp\Subscriber\Mock;
 use GuzzleHttp\Message\Response;
 
-use pbxg33k\VocaDB;
+use Pbxg33k\VocaDB;
 
 class AlbumTest extends PHPUnit_Framework_TestCase
 {

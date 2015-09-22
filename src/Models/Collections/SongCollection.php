@@ -1,5 +1,5 @@
 <?php
-namespace pbxg33k\VocaDB\Models\Collections;
+namespace Pbxg33k\VocaDB\Models\Collections;
 
 class SongCollection extends Base
 {

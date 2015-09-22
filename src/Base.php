@@ -1,5 +1,5 @@
 <?php
-namespace pbxg33k\VocaDB;
+namespace Pbxg33k\VocaDB;
 
 class Base
 {
@@ -14,8 +14,8 @@ class Base
 	{
 		$full_class = explode('\\',get_called_class());
 		$class = end($full_class);
-		$model_class_name = sprintf('pbxg33k\\VocaDB\\Models\\%s', $class);
-		$model_collection_name = sprintf('pbxg33k\\VocaDB\\Models\\Collections\\%sCollection', $class);
+		$model_class_name = sprintf('Pbxg33k\\VocaDB\\Models\\%s', $class);
+		$model_collection_name = sprintf('Pbxg33k\\VocaDB\\Models\\Collections\\%sCollection', $class);
 
 		$response = $this->client->get($this->endpoint, $arguments);
 		switch($response->getStatusCode()) {

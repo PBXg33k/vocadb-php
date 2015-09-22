@@ -1,5 +1,5 @@
 <?php
-namespace pbxg33k\VocaDB\Models;
+namespace Pbxg33k\VocaDB\Models;
 
 class Album extends Base
 {
@@ -11,7 +11,7 @@ class Album extends Base
 
 	/**
 	 * 
-	 * @var pbxg33k\VocaDB\Models\Collections\ArtistCollection
+	 * @var Pbxg33k\VocaDB\Models\Collections\ArtistCollection
 	 */
 	public $artists;
 

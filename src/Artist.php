@@ -2,12 +2,12 @@
 /**
  * {LICENSE}
  */
-namespace pbxg33k\VocaDB;
+namespace Pbxg33k\VocaDB;
 
 /**
  * Artist class
  * 
- * @package pbxg33k\VocaDB
+ * @package Pbxg33k\VocaDB
  * @author Oguzhan Uysal <development@oguzhanuysal.eu>
  */
 class Artist extends Base

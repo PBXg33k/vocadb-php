@@ -2,7 +2,7 @@
 use GuzzleHttp\Subscriber\Mock;
 use GuzzleHttp\Message\Response;
 
-use pbxg33k\VocaDB;
+use Pbxg33k\VocaDB;
 
 class ClientTest extends PHPUnit_Framework_TestCase
 {
@@ -28,16 +28,16 @@ class ClientTest extends PHPUnit_Framework_TestCase
 
 	public function testInit()
 	{
-		$this->assertInstanceOf('pbxg33k\VocaDB\Client', $this->client);
+		$this->assertInstanceOf('Pbxg33k\VocaDB\Client', $this->client);
 	}
 
 	public function testInitArtist()
 	{
-		$this->assertInstanceOf('pbxg33k\VocaDB\Artist', $this->client->artist);
+		$this->assertInstanceOf('Pbxg33k\VocaDB\Artist', $this->client->artist);
 	}
 
 	public function testInitSong()
 	{
-		$this->assertInstanceOf('pbxg33k\VocaDB\Song', $this->client->song);
+		$this->assertInstanceOf('Pbxg33k\VocaDB\Song', $this->client->song);
 	}
 }
