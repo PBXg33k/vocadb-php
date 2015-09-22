@@ -2,7 +2,7 @@
     "name": "pbxg33k/vocadb",
     "description": "PHP API client for the VocaDB Public API (v1)",
     "require": {
-        "guzzlehttp/guzzle": "5.2.0"
+        "guzzlehttp/guzzle": "~5.0|~6.0"
     },
     "require-dev": {
         "phpunit/phpunit": "4.8.*@dev"
