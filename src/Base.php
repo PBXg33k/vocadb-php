@@ -12,7 +12,7 @@ class Base
 
 	public function getComplete($arguments = null)
 	{
-		return $this->get(array_merge((array)$arguments, ['fields' => implode(',', $this->fields)])));
+		return $this->get(array_merge((array)$arguments, ['fields' => implode(',', $this->fields)]));
 	}
 
 	public function get($arguments = null)
