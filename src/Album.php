@@ -15,8 +15,6 @@ class Album extends Base
 		// Make sure we get additional fields such as tracks
 		$fields = implode(',', $this->fields);
 
-		$parent = parent::get(array_merge((array)$arguments, ['fields' => $fields]));
-
-		print_r($parent);
+		return parent::get(array_merge((array)$arguments, ['fields' => $fields]));
 	}
 }
