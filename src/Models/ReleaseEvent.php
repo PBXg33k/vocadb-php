@@ -102,7 +102,7 @@ class ReleaseEvent extends Base
 	}
 
 	/**
-	 * @param aray $series
+	 * @param array $series
 	 * @return array
 	 */
 	public function setSeries($series)

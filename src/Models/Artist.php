@@ -260,7 +260,7 @@ class Artist extends Base
 	 * @param Collections\ArtistCollection $groups
 	 * @return Artist
 	 */
-	public function setGroups(ArtistCollection $groups)
+	public function setGroups(Collections\ArtistCollection $groups)
 	{
 		$this->groups = $groups;
 		return $this;
@@ -332,7 +332,7 @@ class Artist extends Base
 	 * @param Collections\ArtistCollection $members
 	 * @return Artist
 	 */
-	public function setMembers(ArtistCollection $members)
+	public function setMembers(Collections\ArtistCollection $members)
 	{
 		$this->members = $members;
 		return $this;

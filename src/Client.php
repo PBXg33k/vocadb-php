@@ -170,7 +170,7 @@ class Client {
 	 * 
 	 * @param string $uri 
 	 * @param array $arguments 
-	 * @return GuzzleHttp\Message\Response
+	 * @return \GuzzleHttp\Psr7\Response
 	 * 
 	 * @todo Add exceptions on errors
 	 */
