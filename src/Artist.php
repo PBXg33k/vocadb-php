@@ -16,11 +16,6 @@ class Artist extends Base
 
 	public $fields = ['Description', 'Groups', 'Members', 'Names', 'Tags', 'WebLinks'];
 
-	public function getByName($name)
-	{
-		return $this->get('',['query' => $name]);
-	}
-
 	public function albums()
 	{
 		return $this->client->album->get(['artistId' => $this->id]);
