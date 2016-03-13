@@ -5,6 +5,10 @@ class Base
 {
 	protected $client;
 
+    public $endpoint;
+
+    public $fields;
+
 	public function __construct(Client $client)
 	{
 		$this->client = $client;
