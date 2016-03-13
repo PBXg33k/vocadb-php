@@ -7,155 +7,155 @@ class Album extends Base
 	 * 
 	 * @var string
 	 */
-	public $additionalNames;
+	protected $additionalNames;
 
 	/**
 	 * 
 	 * @var Pbxg33k\VocaDB\Models\Collections\ArtistCollection
 	 */
-	public $artists;
+	protected $artists;
 
 	/**
 	 * 
 	 * @var string
 	 */
-	public $artistString;
+	protected $artistString;
 
 	/**
 	 * 
 	 * @var string
 	 */
-	public $barcode;
+	protected $barcode;
 
 	/**
 	 * 
 	 * @var string
 	 */
-	public $catalogNumber;
+	protected $catalogNumber;
 
 	/**
 	 * 
 	 * @var string
 	 */
-	public $createDate;
+	protected $createDate;
 
 	/**
 	 * 
 	 * @var string
 	 */
-	public $defaultName;
+	protected $defaultName;
 
 	/**
 	 * 
 	 * @var string
 	 */
-	public $defaultNameLanguage;
+	protected $defaultNameLanguage;
 
 	/**
 	 * 
 	 * @var string
 	 */
-	public $discType;
+	protected $discType;
 
 	/**
 	 * 
 	 * @var string
 	 */
-	public $id;
+	protected $id;
 
 	/**
 	 * 
 	 * @var string
 	 */
-	public $identifiers;
+	protected $identifiers;
 
 	/**
 	 * 
 	 * @var string
 	 */
-	public $localizedName;
+	protected $localizedName;
 
 	/**
 	 * 
 	 * @var string
 	 */
-	public $mainPicture;
+	protected $mainPicture;
 
 	/**
 	 * 
 	 * @var string
 	 */
-	public $mergedTo;
+	protected $mergedTo;
 
 	/**
 	 * 
 	 * @var string
 	 */
-	public $name;
+	protected $name;
 
 	/**
 	 * 
 	 * @var array
 	 */
-	public $names;
+	protected $names;
 
 	/**
 	 * 
 	 * @var array
 	 */
-	public $pvs;
+	protected $pvs;
 
 	/**
 	 * 
 	 * @var float
 	 */
-	public $ratingAverage;
+	protected $ratingAverage;
 
 	/**
 	 * 
 	 * @var integer
 	 */
-	public $ratingCount;
+	protected $ratingCount;
 
 	/**
 	 * 
 	 * @var string
 	 */
-	public $releaseDate;
+	protected $releaseDate;
 
 	/**
 	 * 
 	 * @var Pbxg33k\VocaDB\Models\ReleaseEvent
 	 */
-	public $releaseEvent;
+	protected $releaseEvent;
 
 	/**
 	 * 
 	 * @var string
 	 */
-	public $status;
+	protected $status;
 
 	/**
 	 * 
 	 * @var string
 	 */
-	public $tags;
+	protected $tags;
 
 	/**
 	 * 
 	 * @var Pbxg33k\VocaDB\Models\Collections\TrackCollection
 	 */
-	public $tracks;
+	protected $tracks;
 
 	/**
 	 * 
 	 * @var integer
 	 */
-	public $version;
+	protected $version;
 
 	/**
 	 * 
 	 * @var string
 	 */
-	public $webLinks;
+	protected $webLinks;
 }

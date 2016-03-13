@@ -7,35 +7,35 @@ class Track extends Base
 	 * 
 	 * @var integer
 	 */
-	public $discNumber;
+	protected $discNumber;
 
 	/**
 	 * 
 	 * @var integer
 	 */
-	public $id;
+	protected $id;
 
 	/**
 	 * 
 	 * @var string
 	 */
-	public $name;
+	protected $name;
 
 	/**
 	 * 
 	 * @var Pbxg33k\VocaDB\Models\Song
 	 */
-	public $song;
+	protected $song;
 
 	/**
 	 * 
 	 * @var integer
 	 */
-	public $trackNumber;
+	protected $trackNumber;
 
 	/**
 	 * 
 	 * @var Pbxg33k\VocaDB\Models\Album
 	 */
-	public $album;
+	protected $album;
 }

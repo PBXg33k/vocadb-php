@@ -7,35 +7,35 @@ class ReleaseEvent extends Base
 	 * 
 	 * @var string
 	 */
-	public $date;
+	protected $date;
 
 	/**
 	 * 
 	 * @var string
 	 */
-	public $description;
+	protected $description;
 
 	/**
 	 * 
 	 * @var integer
 	 */
-	public $id;
+	protected $id;
 
 	/**
 	 * 
 	 * @var Pbxg33k\VocaDB\ReleaseEventSeries
 	 */
-	public $series;
+	protected $series;
 
 	/**
 	 * 
 	 * @var integer
 	 */
-	public $seriesNumber;
+	protected $seriesNumber;
 
 	/**
 	 * 
 	 * @var string
 	 */
-	public $seriesSuffix;
+	protected $seriesSuffix;
 }

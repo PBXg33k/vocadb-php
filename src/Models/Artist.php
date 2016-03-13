@@ -7,118 +7,118 @@ class Artist extends Base
 	 * 
 	 * @var string
 	 */
-	public $additionalNames;
+	protected $additionalNames;
 
 	/**
 	 * 
 	 * @var string
 	 */
-	public $artistType;
+	protected $artistType;
 
 	/**
 	 * 
 	 * @var Pbxg33k\VocaDB\Models\Artist
 	 */
-	public $baseVoicebank;
+	protected $baseVoicebank;
 
 	/**
 	 * 
 	 * @var string
 	 */
-	public $createDate;
+	protected $createDate;
 
 	/**
 	 * 
 	 * @var string
 	 */
-	public $defaultName;
+	protected $defaultName;
 
 	/**
 	 * 
 	 * @var string
 	 */
-	public $defaultNameLanguage;
+	protected $defaultNameLanguage;
 
 	/**
 	 * 
 	 * @var string
 	 */
-	public $description;
+	protected $description;
 
 	/**
 	 * 
 	 * @var Pbxg33k\VocaDB\Models\Collections\ArtistCollection
 	 */
-	public $groups;
+	protected $groups;
 	/**
 	 * 
 	 * @var string
 	 */
-	public $id;
+	protected $id;
 
 	/**
 	 * 
 	 * @var string
 	 */
-	public $localizedName;
+	protected $localizedName;
 
 	/**
 	 * 
 	 * @var string
 	 */
-	public $mainPicture;
+	protected $mainPicture;
 
 	/**
 	 * 
 	 * @var Pbxg33k\VocaDB\Models\Collections\ArtistCollection
 	 */
-	public $members;
+	protected $members;
 
 	/**
 	 * 
 	 * @var integer
 	 */
-	public $mergedTo;
+	protected $mergedTo;
 
 	/**
 	 * 
 	 * @var string
 	 */
-	public $name;
+	protected $name;
 
 	/**
 	 * 
 	 * @var string
 	 */
-	public $names;
+	protected $names;
 
 	/**
 	 * 
 	 * @var string
 	 */
-	public $pictureMime;
+	protected $pictureMime;
 
 	/**
 	 * 
 	 * @var string
 	 */
-	public $relations;
+	protected $relations;
 
 	/**
 	 * 
 	 * @var string
 	 */
-	public $status;
+	protected $status;
 
 	/**
 	 * 
 	 * @var integer
 	 */
-	public $version;
+	protected $version;
 
 	/**
 	 * 
 	 * @var string
 	 */
-	public $webLinks;
+	protected $webLinks;
 }

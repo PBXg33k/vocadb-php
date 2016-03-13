@@ -7,149 +7,149 @@ class Song extends Base
 	 * 
 	 * @var string
 	 */
-	public $additionalNames;
+	protected $additionalNames;
 
 	/**
 	 * 
 	 * @var Pbxg33k\VocaDB\Models\Collections\AlbumCollection
 	 */
-	public $albums;
+	protected $albums;
 
 	/**
 	 * 
 	 * @var Pbxg33k\VocaDB\Models\Collections\ArtistCollection
 	 */
-	public $artists;
+	protected $artists;
 
 	/**
 	 * 
 	 * @var string
 	 */
-	public $artistString;
+	protected $artistString;
 
 	/**
 	 * 
 	 * @var string
 	 */
-	public $createDate;
+	protected $createDate;
 
 	/**
 	 * 
 	 * @var string
 	 */
-	public $defaultName;
+	protected $defaultName;
 
 	/**
 	 * 
 	 * @var string
 	 */
-	public $defaultNameLanguage;
+	protected $defaultNameLanguage;
 
 	/**
 	 * 
 	 * @var string
 	 */
-	public $favoritedTimes;
+	protected $favoritedTimes;
 
 	/**
 	 * 
 	 * @var string
 	 */
-	public $id;
+	protected $id;
 
 	/**
 	 * 
 	 * @var string
 	 */
-	public $lengthSeconds;
+	protected $lengthSeconds;
 
 	/**
 	 * 
 	 * @var string
 	 */
-	public $localizedName;
+	protected $localizedName;
 
 	/**
 	 * 
 	 * @var string
 	 */
-	public $lyrics;
+	protected $lyrics;
 
 	/**
 	 * 
 	 * @var string
 	 */
-	public $mergedTo;
+	protected $mergedTo;
 
 	/**
 	 * 
 	 * @var string
 	 */
-	public $name;
+	protected $name;
 
 	/**
 	 * 
 	 * @var string
 	 */
-	public $names;
+	protected $names;
 
 	/**
 	 * 
 	 * @var string
 	 */
-	public $originalVersionId;
+	protected $originalVersionId;
 
 	/**
 	 * 
 	 * @var string
 	 */
-	public $pvs;
+	protected $pvs;
 
 	/**
 	 * 
 	 * @var string
 	 */
-	public $pvServices;
+	protected $pvServices;
 
 	/**
 	 * 
 	 * @var string
 	 */
-	public $ratingScore;
+	protected $ratingScore;
 
 	/**
 	 * 
 	 * @var string
 	 */
-	public $songType;
+	protected $songType;
 
 	/**
 	 * 
 	 * @var string
 	 */
-	public $status;
+	protected $status;
 
 	/**
 	 * 
 	 * @var string
 	 */
-	public $tags;
+	protected $tags;
 
 	/**
 	 * 
 	 * @var string
 	 */
-	public $thumbUrl;
+	protected $thumbUrl;
 
 	/**
 	 * 
 	 * @var integer
 	 */
-	public $version;
+	protected $version;
 
 	/**
 	 * 
 	 * @var string
 	 */
-	public $webLinks;
+	protected $webLinks;
 }

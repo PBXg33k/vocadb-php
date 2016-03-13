@@ -10,90 +10,90 @@ class Tag extends Base
     /**
      * @var string
      */
-    public $additionalNames;
+    protected $additionalNames;
 
     /**
      * @var string
      */
-    public $aliasedTo;
+    protected $aliasedTo;
 
     /**
      * @var string
      */
-    public $categoryName;
+    protected $categoryName;
 
     /**
-     * @var \DateTimeInterface
+     * @var \DateTime
      */
-    public $createDate;
-
-    /**
-     * @var string
-     */
-    public $defaultNameLanguage;
+    protected $createDate;
 
     /**
      * @var string
      */
-    public $description;
+    protected $defaultNameLanguage;
+
+    /**
+     * @var string
+     */
+    protected $description;
 
     /**
      * @var integer
      */
-    public $id;
+    protected $id;
 
     /**
      * @var string
      */
-    public $mainPicture;
+    protected $mainPicture;
 
     /**
      * @var string
      */
-    public $name;
+    protected $name;
 
     /**
      * @var array
      */
-    public $names;
+    protected $names;
 
     /**
      * @var Tag
      */
-    public $parent;
+    protected $parent;
 
     /**
      * @var Tag
      */
-    public $relatedTags;
+    protected $relatedTags;
 
     /**
      * @var string
      */
-    public $status;
+    protected $status;
 
     /**
      * @var string
      */
-    public $translatedDescription;
+    protected $translatedDescription;
 
     /**
      * @var string
      */
-    public $urlSlug;
+    protected $urlSlug;
 
     /**
      * @var integer
      */
-    public $usageCount;
+    protected $usageCount;
 
     /**
      * @var integer
      */
-    public $version;
+    protected $version;
 
     /**
      * @var array
      */
-    public $webLinks;
+    protected $webLinks;
 }
