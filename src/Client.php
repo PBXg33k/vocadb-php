@@ -17,23 +17,46 @@ use GuzzleHttp\Client as GuzzleClient;
 class Client {
 	const CLIENT_VER = "0.1.0";
 	const USER_AGENT_SUFFIX = "pgxg33k-vocadb-php-client/";
+	/**
+	 * @var string
+     */
 	private $api_url = "http://vocadb.net/api";
 
 	/**
-	 * @var Pbxg33k\VocaDB\Artist
+	 * @var Artist
 	 */
 	public $artist;
+	/**
+	 * @var Album
+	 */
 	public $album;
+	/**
+	 * @var Song
+     */
 	public $song;
+	/**
+	 * @var Tag
+     */
 	public $tag;
+	/**
+	 * @var ReleaseEvent
+     */
 	public $releaseEvent;
 
+	/**
+	 * @var string
+     */
+	public $content;
+
+	/**
+	 * @var GuzzleClient
+     */
 	public $_client;
 
 	/**
 	 * Construct the VocaDB Client
 	 * 
-	 * @param Pbxg33k\VocaDB\Config $config 
+	 * @param array $config
 	 */
 	public function __construct($config = null)
 	{
@@ -163,8 +186,7 @@ class Client {
 	/**
 	 * Return a FQDN URI with arguments
 	 * 
-	 * @param string $endpoint 
-	 * @param array $arguments 
+	 * @param string $endpoint
 	 * @return string
 	 */
 	protected function buildUri($endpoint)
