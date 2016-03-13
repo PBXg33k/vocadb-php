@@ -156,7 +156,8 @@ class Client {
 
 	/**
 	 * Set the API URI
-	 * 
+	 *
+	 * @param string $uri
 	 * @return object
 	 */
 	public function setApiUri($uri)

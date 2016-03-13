@@ -1,14 +1,8 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: PBX_g33k
- * Date: 13-Mar-16
- * Time: 18:17
- */
-
 namespace Pbxg33k\VocaDB\Traits;
 
-trait CanConvertFromStdClass {
+trait CanConvertFromStdClass
+{
     /**
      * List of types which are not used as objects
      *
@@ -94,7 +88,7 @@ trait CanConvertFromStdClass {
         $reflection = new \ReflectionClass($this);
 
         // Iterate over $class for properties
-        foreach($class as $itemKey => $itemValue) {
+        foreach ($class as $itemKey => $itemValue) {
             // Check if key exists in $this
 
             // Convert key to a propertyname in $this
@@ -102,18 +96,20 @@ trait CanConvertFromStdClass {
             $propertyName = (property_exists($this, $propertyName)) ? $propertyName :
                 (
                 property_exists($this, lcfirst($propertyName)) ? lcfirst($propertyName) :
-                    preg_replace_callback('/([A-Z])/', function($match) { return strtolower('_'.$match[1]); }, lcfirst($propertyName))
+                    preg_replace_callback('/([A-Z])/', function ($match) {
+                        return strtolower('_' . $match[1]);
+                    }, lcfirst($propertyName))
                 );
 
             // Check if property exists and assign a ReflectionProperty class to $reflectionProperty
-            if(property_exists($this, $propertyName) && $reflectionProperty = $reflection->getProperty($propertyName)) {
+            if (property_exists($this, $propertyName) && $reflectionProperty = $reflection->getProperty($propertyName)) {
                 // Get the expected property class from the property's DocBlock
-                if($propertyClassName = $this->getClassFromDocComment($reflectionProperty->getDocComment())) {
+                if ($propertyClassName = $this->getClassFromDocComment($reflectionProperty->getDocComment())) {
 
                     // Set argument for constructor (if any), in case we're dealing with an object (IE: DateTime)
                     $this->objectConstructorArguments = (in_array($propertyClassName, $this->giveDataInConstructor)) ? $itemValue : null;
 
-                    if(in_array($propertyClassName, $this->nonObjectTypes)) {
+                    if (in_array($propertyClassName, $this->nonObjectTypes)) {
                         $this->setPropertyValue($propertyName, $itemValue, true);
                     } else {
                         $object = new $propertyClassName($this->objectConstructorArguments);
@@ -122,9 +118,9 @@ trait CanConvertFromStdClass {
                         // IE: DateTime with a negative timestamp will cause a SQL Error
                         $this->checkObjectForErrors($object, true);
 
-                        if($object) {
+                        if ($object) {
                             // Check if object is convertable by looking for method fromClass (inherited from this trait)
-                            if(method_exists($object, 'fromClass')) {
+                            if (method_exists($object, 'fromClass')) {
                                 $object->fromClass($itemValue);
                             }
                             // We're done. Assign the result to the propery of $this
@@ -144,27 +140,29 @@ trait CanConvertFromStdClass {
      *
      * @param string $key
      * @param mixed $value
+     * @param bool $override
      * @param bool $isCollection Boolean to indicate Doctrine Collections
      * @return Object
+     * @throws \Exception if setting value has failed
      */
     private function setPropertyValue($key, $value, $override = false, $isCollection = false)
     {
         // Replace empty strings with null
-        if($value === "")
+        if ($value === "")
             $value = null;
 
         // Convert key to method names
         $methodName = $this->getMethodName($key);
 
-        if(!$override && method_exists($this, 'get'.$methodName)) {
-            $currentValue = $this->{'get'.$methodName}();
-            if($currentValue === $value)
-                return;
+        if (!$override && method_exists($this, 'get' . $methodName)) {
+            $currentValue = $this->{'get' . $methodName}();
+            if ($currentValue === $value)
+                return $this;
         }
 
         $setMethod = ($isCollection) ? 'add' : 'set';
-        if(method_exists($this, $setMethod.$methodName)) {
-            return $this->{$setMethod.$methodName}($value);
+        if (method_exists($this, $setMethod . $methodName)) {
+            return $this->{$setMethod . $methodName}($value);
         } else {
             throw new \Exception(sprintf("Unable to set value, method not found: %s%s in class: %s", $setMethod, $methodName, static::class));
         }
@@ -172,19 +170,22 @@ trait CanConvertFromStdClass {
 
     private function getMethodName($propertyKey)
     {
-        return ucfirst(preg_replace_callback('/_([a-z])/', function($match) { return strtoupper($match[1]); } , $propertyKey));
+        return ucfirst(preg_replace_callback('/_([a-z])/', function ($match) {
+            return strtoupper($match[1]);
+        }, $propertyKey));
     }
 
     /**
      * Tries to get the correct class name from the given docBlock for Reflection
      *
      * @param string $comment the docblock
-     * @return string|bool Classname if a match is found, otherwise FALSE
+     * @param bool $includeNamespaces
+     * @return bool|string Classname if a match is found, otherwise FALSE
      */
     private function getClassFromDocComment($comment, $includeNamespaces = true)
     {
         if (preg_match('~\@var[\s]+([A-Za-z0-9\\\\]+)~', $comment, $matches)) {
-            if($includeNamespaces)
+            if ($includeNamespaces)
                 return $matches[1];
             else
                 return join('', array_slice(explode('\\', $matches[1]), -1));
@@ -201,7 +202,7 @@ trait CanConvertFromStdClass {
      */
     private function getEntityFromDoctrineManyToMany($comment)
     {
-        if(preg_match('~@ORM\\\\ManyToMany\((:.*?)?targetEntity=\"([A-Za-z0-9\\\\]+)\"~', $comment, $matches)) {
+        if (preg_match('~@ORM\\\\ManyToMany\((:.*?)?targetEntity=\"([A-Za-z0-9\\\\]+)\"~', $comment, $matches)) {
             return $matches[2];
         }
 
@@ -210,7 +211,7 @@ trait CanConvertFromStdClass {
 
     private function getJoinColumnFromDoctrineAnnotation($comment)
     {
-        if(preg_match('~@ORM\\\\JoinColumn\((:.*?)?name=\"([a-zA-Z0-9_]+)\"~', $comment, $matches)) {
+        if (preg_match('~@ORM\\\\JoinColumn\((:.*?)?name=\"([a-zA-Z0-9_]+)\"~', $comment, $matches)) {
             return $matches[2];
         }
 
@@ -226,14 +227,14 @@ trait CanConvertFromStdClass {
      */
     private function checkObjectForErrors(&$object, $fix = false)
     {
-        if($object instanceof \DateTime) {
+        if ($object instanceof \DateTime) {
             // The constructor (passed from the API) is NULL, indicating an empty value
             // PHP DateTime's default value is now()
-            if($this->objectConstructorArguments == NULL) {
+            if ($this->objectConstructorArguments == NULL) {
                 $object = NULL;
-            } else if(!$object->getTimestamp()) {
+            } else if (!$object->getTimestamp()) {
                 // DateTime has a negative or false value
-                if($fix)
+                if ($fix)
                     $object->setTimestamp(0);
             }
         }
