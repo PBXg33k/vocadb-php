@@ -56,7 +56,6 @@ class Base
         $response = $this->client->get($this->endpoint, $arguments);
         switch($response->getStatusCode()) {
             case 200:
-                // $response_obj = $response->json();
                 $response_obj = (array)json_decode($response->getBody());
                 $collection = new $model_collection_name();
                 if(count($response_obj['items'])) {
@@ -70,10 +69,8 @@ class Base
                 }
 
                 return $collection;
-                break;
             default:
                 throw new \Exception('HTTP ERROR OCCURED');
-                break;
         }
     }
 
@@ -99,7 +96,6 @@ class Base
         $full_class = explode('\\',get_called_class());
         $class = end($full_class);
         $model_class_name = sprintf('Pbxg33k\\VocaDB\\Models\\%s', $class);
-        $model_collection_name = sprintf('Pbxg33k\\VocaDB\\Models\\Collections\\%sCollection', $class);
 
         $endpoint = $this->endpoint.'/'.$id;
 
@@ -111,16 +107,13 @@ class Base
                 $collection = new $model_class_name();
                 $collection->fromApi($response_obj);
                 return $collection;
-
-                break;
             default:
                 throw new \Exception('HTTP ERROR OCCURED');
-                break;
         }
     }
 
     /**
-     * @param $id
+     * @param integer $id
      * @return integer
      * @throws \Exception
      */
