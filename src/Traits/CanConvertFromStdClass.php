@@ -162,18 +162,11 @@ trait CanConvertFromStdClass {
                 return;
         }
 
-        if($isCollection) {
-            if(method_exists($this, 'add'.$methodName)) {
-                return $this->{'add'.$methodName}($value);
-            } else {
-                throw new \Exception("Unable to add value, method not found: add{$methodName}. Class ".static::class);
-            }
+        $setMethod = ($isCollection) ? 'add' : 'set';
+        if(method_exists($this, $setMethod.$methodName)) {
+            return $this->{$setMethod.$methodName}($value);
         } else {
-            if(method_exists($this, 'set'.$methodName)) {
-                return $this->{'set'.$methodName}($value);
-            } else {
-                throw new \Exception("Unable to set value, method not found: set{$methodName}. Class ". static::class);
-            }
+            throw new \Exception(sprintf("Unable to set value, method not found: %s%s in class: %s", $setMethod, $methodName, static::class));
         }
     }
 
