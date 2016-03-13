@@ -1,7 +1,7 @@
 <?php
 /**
- * {LICENSE}
- */
+     * {LICENSE}
+     */
 namespace Pbxg33k\VocaDB;
 
 /**
@@ -12,7 +12,7 @@ namespace Pbxg33k\VocaDB;
  */
 class Album extends Base
 {
-	public $endpoint = 'albums';
+    public $endpoint = 'albums';
 
-	public $fields = ['AdditionalNames', 'Artists', 'Identifiers', 'MainPicture', 'Names', 'PVs', 'Tags', 'Tracks', 'WebLinks'];
+    public $fields = ['AdditionalNames', 'Artists', 'Identifiers', 'MainPicture', 'Names', 'PVs', 'Tags', 'Tracks', 'WebLinks'];
 }

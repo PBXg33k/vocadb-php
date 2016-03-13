@@ -5,7 +5,7 @@ class Base
 {
 	public $collection;
 
-	public function __construct()
+	public function __construct ()
 	{
 		$this->collection = [];
 	}
@@ -14,9 +14,9 @@ class Base
 	 * Add item to collection
 	 * 
 	 * @param \Pbxg33k\VocaDB\Models\Base $item
-	 * @return \Pbxg33k\VocaDB\Models\Collection\Base
+	 * @return Base
 	 */
-	public function add($item)
+	public function add ($item)
 	{
 		$this->collection[] = $item;
 		return $this;
@@ -28,11 +28,11 @@ class Base
 	 * @param $class
 	 * @return array
 	 */
-	public function convertFromStdClass($class)
+	public function convertFromStdClass ($class)
 	{
 		$return = [];
 		$class_name = $this->getSingleName();
-		foreach($class as $c) {
+		foreach ($class as $c) {
 			$single = new $class_name();
 			$single->convertFromStdClass($c);
 			$return[] = $single;
@@ -45,9 +45,9 @@ class Base
 	 * Gets the class name for single entity in collection
 	 * @return string
 	 */
-	private function getSingleName()
+	private function getSingleName ()
 	{
-		$full_class = explode('\\',get_called_class());
+		$full_class = explode('\\', get_called_class());
 		$class = end($full_class);
 
 		return sprintf('Pbxg33k\\VocaDB\\Models\\%s', substr($class, 0, strlen($class) - strlen('Collection')));
@@ -58,9 +58,9 @@ class Base
 	 * @return mixed
 	 * @throws Exception
 	 */
-	public function firstOrError()
+	public function firstOrError ()
 	{
-		if(count($this->collection)) {
+		if (count($this->collection)) {
 			return array_values($this->collection)[0];
 		}
 

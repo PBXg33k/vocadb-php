@@ -81,9 +81,9 @@ trait CanConvertFromStdClass
      * For doctrine entities, it tries to use the entity manager to retrieve entities from the database
      *
      * @param  object $class class
-     * @return object
+     * @return CanConvertFromStdClass
      */
-    public function fromClass($class)
+    public function fromClass ($class)
     {
         $reflection = new \ReflectionClass($this);
 
@@ -93,10 +93,8 @@ trait CanConvertFromStdClass
 
             // Convert key to a propertyname in $this
             $propertyName = lcfirst(str_replace(' ', '', ucwords(str_replace('_', ' ', $itemKey))));
-            $propertyName = (property_exists($this, $propertyName)) ? $propertyName :
-                (
-                property_exists($this, lcfirst($propertyName)) ? lcfirst($propertyName) :
-                    preg_replace_callback('/([A-Z])/', function ($match) {
+            $propertyName = (property_exists($this, $propertyName)) ? $propertyName : (
+                property_exists($this, lcfirst($propertyName)) ? lcfirst($propertyName) : preg_replace_callback('/([A-Z])/', function ($match) {
                         return strtolower('_' . $match[1]);
                     }, lcfirst($propertyName))
                 );
@@ -107,16 +105,16 @@ trait CanConvertFromStdClass
                 if ($propertyClassName = $this->getClassFromDocComment($reflectionProperty->getDocComment())) {
 
                     // Set argument for constructor (if any), in case we're dealing with an object (IE: DateTime)
-                    $this->objectConstructorArguments = (in_array($propertyClassName, $this->giveDataInConstructor)) ? $itemValue : null;
+                    $this->objectConstructorArguments = (in_array($propertyClassName, $this->giveDataInConstructor)) ? $itemValue : NULL;
 
                     if (in_array($propertyClassName, $this->nonObjectTypes)) {
-                        $this->setPropertyValue($propertyName, $itemValue, true);
+                        $this->setPropertyValue($propertyName, $itemValue, TRUE);
                     } else {
                         $object = new $propertyClassName($this->objectConstructorArguments);
 
                         // Check if $object has valid values
                         // IE: DateTime with a negative timestamp will cause a SQL Error
-                        $this->checkObjectForErrors($object, true);
+                        $this->checkObjectForErrors($object, TRUE);
 
                         if ($object) {
                             // Check if object is convertable by looking for method fromClass (inherited from this trait)
@@ -124,7 +122,7 @@ trait CanConvertFromStdClass
                                 $object->fromClass($itemValue);
                             }
                             // We're done. Assign the result to the propery of $this
-                            $this->setPropertyValue($propertyName, $object, true);
+                            $this->setPropertyValue($propertyName, $object, TRUE);
                         }
                     }
                     unset($object);
@@ -145,7 +143,7 @@ trait CanConvertFromStdClass
      * @return Object
      * @throws \Exception if setting value has failed
      */
-    private function setPropertyValue($key, $value, $override = false, $isCollection = false)
+    private function setPropertyValue ($key, $value, $override = false, $isCollection = false)
     {
         // Replace empty strings with null
         if ($value === "")
@@ -168,6 +166,9 @@ trait CanConvertFromStdClass
         }
     }
 
+    /**
+     * @param string $propertyKey
+     */
     private function getMethodName($propertyKey)
     {
         return ucfirst(preg_replace_callback('/_([a-z])/', function ($match) {
@@ -182,7 +183,7 @@ trait CanConvertFromStdClass
      * @param bool $includeNamespaces
      * @return bool|string Classname if a match is found, otherwise FALSE
      */
-    private function getClassFromDocComment($comment, $includeNamespaces = true)
+    private function getClassFromDocComment ($comment, $includeNamespaces = true)
     {
         if (preg_match('~\@var[\s]+([A-Za-z0-9\\\\]+)~', $comment, $matches)) {
             if ($includeNamespaces)
@@ -191,31 +192,31 @@ trait CanConvertFromStdClass
                 return join('', array_slice(explode('\\', $matches[1]), -1));
         }
 
-        return false;
+        return FALSE;
     }
 
     /**
      * Returns the target entity from Doctrine's many to many relation
      *
      * @param string $comment Annotation for the property
-     * @return string|bool Classname if a match is found, otherwise FALSE
+     * @return string|false Classname if a match is found, otherwise FALSE
      */
-    private function getEntityFromDoctrineManyToMany($comment)
+    private function getEntityFromDoctrineManyToMany ($comment)
     {
         if (preg_match('~@ORM\\\\ManyToMany\((:.*?)?targetEntity=\"([A-Za-z0-9\\\\]+)\"~', $comment, $matches)) {
             return $matches[2];
         }
 
-        return false;
+        return FALSE;
     }
 
-    private function getJoinColumnFromDoctrineAnnotation($comment)
+    private function getJoinColumnFromDoctrineAnnotation ($comment)
     {
         if (preg_match('~@ORM\\\\JoinColumn\((:.*?)?name=\"([a-zA-Z0-9_]+)\"~', $comment, $matches)) {
             return $matches[2];
         }
 
-        return false;
+        return FALSE;
     }
 
     /**
@@ -225,7 +226,7 @@ trait CanConvertFromStdClass
      * @param bool $fix Fix errors
      * @return Object
      */
-    private function checkObjectForErrors(&$object, $fix = false)
+    private function checkObjectForErrors (&$object, $fix = false)
     {
         if ($object instanceof \DateTime) {
             // The constructor (passed from the API) is NULL, indicating an empty value
@@ -234,8 +235,9 @@ trait CanConvertFromStdClass
                 $object = NULL;
             } else if (!$object->getTimestamp()) {
                 // DateTime has a negative or false value
-                if ($fix)
-                    $object->setTimestamp(0);
+                if ($fix) {
+                                    $object->setTimestamp(0);
+                }
             }
         }
     }
