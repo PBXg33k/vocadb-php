@@ -38,4 +38,114 @@ class ReleaseEvent extends Base
 	 * @var string
 	 */
 	protected $seriesSuffix;
+
+	/**
+	 * @return string
+	 */
+	public function getDate()
+	{
+		return $this->date;
+	}
+
+	/**
+	 * @param string $date
+	 * @return ReleaseEvent
+	 */
+	public function setDate($date)
+	{
+		$this->date = $date;
+		return $this;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function getDescription()
+	{
+		return $this->description;
+	}
+
+	/**
+	 * @param string $description
+	 * @return ReleaseEvent
+	 */
+	public function setDescription($description)
+	{
+		$this->description = $description;
+		return $this;
+	}
+
+	/**
+	 * @return int
+	 */
+	public function getId()
+	{
+		return $this->id;
+	}
+
+	/**
+	 * @param int $id
+	 * @return ReleaseEvent
+	 */
+	public function setId($id)
+	{
+		$this->id = $id;
+		return $this;
+	}
+
+	/**
+	 * @return Pbxg33k\VocaDB\ReleaseEventSeries
+	 */
+	public function getSeries()
+	{
+		return $this->series;
+	}
+
+	/**
+	 * @param Pbxg33k\VocaDB\ReleaseEventSeries $series
+	 * @return ReleaseEvent
+	 */
+	public function setSeries($series)
+	{
+		$this->series = $series;
+		return $this;
+	}
+
+	/**
+	 * @return int
+	 */
+	public function getSeriesNumber()
+	{
+		return $this->seriesNumber;
+	}
+
+	/**
+	 * @param int $seriesNumber
+	 * @return ReleaseEvent
+	 */
+	public function setSeriesNumber($seriesNumber)
+	{
+		$this->seriesNumber = $seriesNumber;
+		return $this;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function getSeriesSuffix()
+	{
+		return $this->seriesSuffix;
+	}
+
+	/**
+	 * @param string $seriesSuffix
+	 * @return ReleaseEvent
+	 */
+	public function setSeriesSuffix($seriesSuffix)
+	{
+		$this->seriesSuffix = $seriesSuffix;
+		return $this;
+	}
+
+
 }
