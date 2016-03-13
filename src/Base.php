@@ -1,25 +1,52 @@
 <?php
 namespace Pbxg33k\VocaDB;
 
+/**
+ * Class Base
+ * @package Pbxg33k\VocaDB
+ */
 class Base
 {
-	protected $client;
+    /**
+     * @var Client
+     */
+    protected $client;
 
+    /**
+     * @var string
+     */
     public $endpoint;
 
+    /**
+     * @var string
+     */
     public $fields;
 
-	public function __construct(Client $client)
+    /**
+     * Base constructor.
+     * @param Client $client
+     */
+    public function __construct(Client $client)
 	{
 		$this->client = $client;
 	}
 
-	public function getComplete($arguments = null)
+    /**
+     * @param null|array $arguments
+     * @return mixed
+     * @throws \Exception
+     */
+    public function getComplete($arguments = null)
 	{
 		return $this->get(array_merge((array)$arguments, ['fields' => implode(',', $this->fields)]));
 	}
 
-	public function get($arguments = null)
+    /**
+     * @param null|array $arguments
+     * @return mixed
+     * @throws \Exception
+     */
+    public function get($arguments = null)
 	{
 		$full_class = explode('\\',get_called_class());
 		$class = end($full_class);
@@ -50,12 +77,24 @@ class Base
 		}
 	}
 
-	public function singleComplete($id, $arguments = null)
+    /**
+     * @param $id
+     * @param null|array $arguments
+     * @return mixed
+     * @throws \Exception
+     */
+    public function singleComplete($id, $arguments = null)
 	{
 		return $this->single($id, array_merge((array)$arguments, ['fields' => implode(',', $this->fields)]));
 	}
 
-	public function single($id, $arguments = null)
+    /**
+     * @param $id
+     * @param null|array $arguments
+     * @return mixed
+     * @throws \Exception
+     */
+    public function single($id, $arguments = null)
 	{
 		$full_class = explode('\\',get_called_class());
 		$class = end($full_class);
@@ -80,12 +119,22 @@ class Base
 		}
 	}
 
-	public function getById($id)
+    /**
+     * @param $id
+     * @return integer
+     * @throws \Exception
+     */
+    public function getById($id)
 	{
 		return $this->get(sprintf('/%s',$id));
 	}
 
-	public function getByName($name)
+    /**
+     * @param $name
+     * @return mixed
+     * @throws \Exception
+     */
+    public function getByName($name)
 	{
 		return $this->get(['query' => $name]);
 	}

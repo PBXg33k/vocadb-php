@@ -13,8 +13,8 @@ class Base
 	/**
 	 * Add item to collection
 	 * 
-	 * @param Pbxg33k\VocaDB\Models\Base $item 
-	 * @return Pbxg33k\VocaDB\Models\Collection\Base
+	 * @param \Pbxg33k\VocaDB\Models\Base $item
+	 * @return \Pbxg33k\VocaDB\Models\Collection\Base
 	 */
 	public function add($item)
 	{
@@ -22,6 +22,12 @@ class Base
 		return $this;
 	}
 
+	/**
+	 * Converts each item in collection into the proper class
+	 *
+	 * @param $class
+	 * @return array
+	 */
 	public function convertFromStdClass($class)
 	{
 		$return = [];
@@ -35,6 +41,10 @@ class Base
 		return $return;
 	}
 
+	/**
+	 * Gets the class name for single entity in collection
+	 * @return string
+	 */
 	private function getSingleName()
 	{
 		$full_class = explode('\\',get_called_class());
@@ -43,6 +53,11 @@ class Base
 		return sprintf('Pbxg33k\\VocaDB\\Models\\%s', substr($class, 0, strlen($class) - strlen('Collection')));
 	}
 
+	/**
+	 * return first item
+	 * @return mixed
+	 * @throws Exception
+	 */
 	public function firstOrError()
 	{
 		if(count($this->collection)) {
