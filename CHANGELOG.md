@@ -6,11 +6,14 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Added ###
 - Unit tests for Album
 - PSR-4 autoloader added for *(clean)* usage without an existing PSR-4 compatible autoloader
+- Tags
+- Release Events
 
 ### Changed ###
 - `Client->get(string $endpoint, [array $arguments = []])` arguments changed
 	- First argument is the endpoint
 	- Second argument is the *(optional)* arguments
+- Moved shared logic to Base controller
 
 ## [v0.1.1] - 2015-05-06  ##
 ### Added ###
