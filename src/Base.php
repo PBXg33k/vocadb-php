@@ -80,4 +80,9 @@ class Base
 	{
 		return $this->get(sprintf('/%s',$id));
 	}
+
+	public function getByName($name)
+	{
+		return $this->get(['query' => $name]);
+	}
 }
