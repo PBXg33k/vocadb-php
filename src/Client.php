@@ -23,10 +23,10 @@ class Client {
 	 * @var Pbxg33k\VocaDB\Artist
 	 */
 	public $artist;
-
 	public $album;
-
 	public $song;
+	public $tag;
+	public $releaseEvent;
 
 	public $_client;
 
@@ -56,12 +56,11 @@ class Client {
 		 * Load all objects
 		 */
 		$this->artist = new Artist($this);
-
 		$this->album = new Album($this);
-
 		$this->song = new Song($this);
-
 		$this->album = new Album($this);
+		$this->tag = new Tag($this);
+		$this->releaseEvent = new ReleaseEvent($this);
 
 		/**
 		 * Load client
