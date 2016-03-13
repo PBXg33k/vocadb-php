@@ -23,7 +23,7 @@ class ReleaseEvent extends Base
 
 	/**
 	 * 
-	 * @var Pbxg33k\VocaDB\ReleaseEventSeries
+	 * @var array
 	 */
 	protected $series;
 
@@ -94,7 +94,7 @@ class ReleaseEvent extends Base
 	}
 
 	/**
-	 * @return Pbxg33k\VocaDB\ReleaseEventSeries
+	 * @return array
 	 */
 	public function getSeries()
 	{
@@ -102,8 +102,8 @@ class ReleaseEvent extends Base
 	}
 
 	/**
-	 * @param Pbxg33k\VocaDB\ReleaseEventSeries $series
-	 * @return ReleaseEvent
+	 * @param aray $series
+	 * @return array
 	 */
 	public function setSeries($series)
 	{

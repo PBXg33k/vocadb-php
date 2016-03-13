@@ -173,7 +173,7 @@ class Song extends Base
 	}
 
 	/**
-	 * @return Pbxg33k\VocaDB\Models\Collections\AlbumCollection
+	 * @return Collections\AlbumCollection
 	 */
 	public function getAlbums()
 	{
@@ -181,7 +181,7 @@ class Song extends Base
 	}
 
 	/**
-	 * @param Pbxg33k\VocaDB\Models\Collections\AlbumCollection $albums
+	 * @param Collections\AlbumCollection $albums
 	 */
 	public function setAlbums(AlbumCollection $albums)
 	{
@@ -189,7 +189,7 @@ class Song extends Base
 	}
 
 	/**
-	 * @return Pbxg33k\VocaDB\Models\Collections\ArtistCollection
+	 * @return Collections\ArtistCollection
 	 */
 	public function getArtists()
 	{
@@ -197,7 +197,7 @@ class Song extends Base
 	}
 
 	/**
-	 * @param Pbxg33k\VocaDB\Models\Collections\ArtistCollection $artists
+	 * @param Collections\ArtistCollection $artists
 	 */
 	public function setArtists(ArtistCollection $artists)
 	{
