@@ -3,46 +3,46 @@ namespace Pbxg33k\VocaDB\Models;
 
 class Track extends Base
 {
-	/**
-	 * 
-	 * @var integer
-	 */
-	protected $discNumber;
+    /**
+     * 
+     * @var integer
+     */
+    protected $discNumber;
 
-	/**
-	 * 
-	 * @var integer
-	 */
-	protected $id;
+    /**
+     * 
+     * @var integer
+     */
+    protected $id;
 
-	/**
-	 * 
-	 * @var string
-	 */
-	protected $name;
+    /**
+     * 
+     * @var string
+     */
+    protected $name;
 
-	/**
-	 * 
-	 * @var Song
-	 */
-	protected $song;
+    /**
+     * 
+     * @var Song
+     */
+    protected $song;
 
-	/**
-	 * 
-	 * @var integer
-	 */
-	protected $trackNumber;
+    /**
+     * 
+     * @var integer
+     */
+    protected $trackNumber;
 
-	/**
-	 * 
-	 * @var Album
-	 */
-	protected $album;
+    /**
+     * 
+     * @var Album
+     */
+    protected $album;
 
     /**
      * @return int
      */
-    public function getDiscNumber()
+    public function getDiscNumber ()
     {
         return $this->discNumber;
     }
@@ -51,7 +51,7 @@ class Track extends Base
      * @param int $discNumber
      * @return Track
      */
-    public function setDiscNumber($discNumber)
+    public function setDiscNumber ($discNumber)
     {
         $this->discNumber = $discNumber;
         return $this;
@@ -60,7 +60,7 @@ class Track extends Base
     /**
      * @return int
      */
-    public function getId()
+    public function getId ()
     {
         return $this->id;
     }
@@ -69,7 +69,7 @@ class Track extends Base
      * @param int $id
      * @return Track
      */
-    public function setId($id)
+    public function setId ($id)
     {
         $this->id = $id;
         return $this;
@@ -78,7 +78,7 @@ class Track extends Base
     /**
      * @return string
      */
-    public function getName()
+    public function getName ()
     {
         return $this->name;
     }
@@ -87,7 +87,7 @@ class Track extends Base
      * @param string $name
      * @return Track
      */
-    public function setName($name)
+    public function setName ($name)
     {
         $this->name = $name;
         return $this;
@@ -96,7 +96,7 @@ class Track extends Base
     /**
      * @return Song
      */
-    public function getSong()
+    public function getSong ()
     {
         return $this->song;
     }
@@ -105,7 +105,7 @@ class Track extends Base
      * @param Song $song
      * @return Track
      */
-    public function setSong(Song $song)
+    public function setSong (Song $song)
     {
         $this->song = $song;
         return $this;
@@ -114,7 +114,7 @@ class Track extends Base
     /**
      * @return int
      */
-    public function getTrackNumber()
+    public function getTrackNumber ()
     {
         return $this->trackNumber;
     }
@@ -123,7 +123,7 @@ class Track extends Base
      * @param int $trackNumber
      * @return Track
      */
-    public function setTrackNumber($trackNumber)
+    public function setTrackNumber ($trackNumber)
     {
         $this->trackNumber = $trackNumber;
         return $this;
@@ -132,7 +132,7 @@ class Track extends Base
     /**
      * @return Album
      */
-    public function getAlbum()
+    public function getAlbum ()
     {
         return $this->album;
     }
@@ -141,7 +141,7 @@ class Track extends Base
      * @param Album $album
      * @return Track
      */
-    public function setAlbum(Album $album)
+    public function setAlbum (Album $album)
     {
         $this->album = $album;
         return $this;

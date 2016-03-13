@@ -100,7 +100,7 @@ class Tag extends Base
     /**
      * @return string
      */
-    public function getAdditionalNames()
+    public function getAdditionalNames ()
     {
         return $this->additionalNames;
     }
@@ -109,7 +109,7 @@ class Tag extends Base
      * @param string $additionalNames
      * @return Tag
      */
-    public function setAdditionalNames($additionalNames)
+    public function setAdditionalNames ($additionalNames)
     {
         $this->additionalNames = $additionalNames;
         return $this;
@@ -118,7 +118,7 @@ class Tag extends Base
     /**
      * @return string
      */
-    public function getAliasedTo()
+    public function getAliasedTo ()
     {
         return $this->aliasedTo;
     }
@@ -127,7 +127,7 @@ class Tag extends Base
      * @param string $aliasedTo
      * @return Tag
      */
-    public function setAliasedTo($aliasedTo)
+    public function setAliasedTo ($aliasedTo)
     {
         $this->aliasedTo = $aliasedTo;
         return $this;
@@ -136,7 +136,7 @@ class Tag extends Base
     /**
      * @return string
      */
-    public function getCategoryName()
+    public function getCategoryName ()
     {
         return $this->categoryName;
     }
@@ -145,7 +145,7 @@ class Tag extends Base
      * @param string $categoryName
      * @return Tag
      */
-    public function setCategoryName($categoryName)
+    public function setCategoryName ($categoryName)
     {
         $this->categoryName = $categoryName;
         return $this;
@@ -154,7 +154,7 @@ class Tag extends Base
     /**
      * @return \DateTime
      */
-    public function getCreateDate()
+    public function getCreateDate ()
     {
         return $this->createDate;
     }
@@ -163,7 +163,7 @@ class Tag extends Base
      * @param \DateTime $createDate
      * @return Tag
      */
-    public function setCreateDate($createDate)
+    public function setCreateDate ($createDate)
     {
         $this->createDate = $createDate;
         return $this;
@@ -172,7 +172,7 @@ class Tag extends Base
     /**
      * @return string
      */
-    public function getDefaultNameLanguage()
+    public function getDefaultNameLanguage ()
     {
         return $this->defaultNameLanguage;
     }
@@ -181,7 +181,7 @@ class Tag extends Base
      * @param string $defaultNameLanguage
      * @return Tag
      */
-    public function setDefaultNameLanguage($defaultNameLanguage)
+    public function setDefaultNameLanguage ($defaultNameLanguage)
     {
         $this->defaultNameLanguage = $defaultNameLanguage;
         return $this;
@@ -190,7 +190,7 @@ class Tag extends Base
     /**
      * @return string
      */
-    public function getDescription()
+    public function getDescription ()
     {
         return $this->description;
     }
@@ -199,7 +199,7 @@ class Tag extends Base
      * @param string $description
      * @return Tag
      */
-    public function setDescription($description)
+    public function setDescription ($description)
     {
         $this->description = $description;
         return $this;
@@ -208,7 +208,7 @@ class Tag extends Base
     /**
      * @return int
      */
-    public function getId()
+    public function getId ()
     {
         return $this->id;
     }
@@ -217,7 +217,7 @@ class Tag extends Base
      * @param int $id
      * @return Tag
      */
-    public function setId($id)
+    public function setId ($id)
     {
         $this->id = $id;
         return $this;
@@ -226,7 +226,7 @@ class Tag extends Base
     /**
      * @return string
      */
-    public function getMainPicture()
+    public function getMainPicture ()
     {
         return $this->mainPicture;
     }
@@ -235,7 +235,7 @@ class Tag extends Base
      * @param string $mainPicture
      * @return Tag
      */
-    public function setMainPicture($mainPicture)
+    public function setMainPicture ($mainPicture)
     {
         $this->mainPicture = $mainPicture;
         return $this;
@@ -244,7 +244,7 @@ class Tag extends Base
     /**
      * @return string
      */
-    public function getName()
+    public function getName ()
     {
         return $this->name;
     }
@@ -253,7 +253,7 @@ class Tag extends Base
      * @param string $name
      * @return Tag
      */
-    public function setName($name)
+    public function setName ($name)
     {
         $this->name = $name;
         return $this;
@@ -262,7 +262,7 @@ class Tag extends Base
     /**
      * @return array
      */
-    public function getNames()
+    public function getNames ()
     {
         return $this->names;
     }
@@ -271,7 +271,7 @@ class Tag extends Base
      * @param array $names
      * @return Tag
      */
-    public function setNames($names)
+    public function setNames ($names)
     {
         $this->names = $names;
         return $this;
@@ -280,7 +280,7 @@ class Tag extends Base
     /**
      * @return Tag
      */
-    public function getParent()
+    public function getParent ()
     {
         return $this->parent;
     }
@@ -289,7 +289,7 @@ class Tag extends Base
      * @param Tag $parent
      * @return Tag
      */
-    public function setParent($parent)
+    public function setParent ($parent)
     {
         $this->parent = $parent;
         return $this;
@@ -298,7 +298,7 @@ class Tag extends Base
     /**
      * @return Tag
      */
-    public function getRelatedTags()
+    public function getRelatedTags ()
     {
         return $this->relatedTags;
     }
@@ -307,7 +307,7 @@ class Tag extends Base
      * @param Tag $relatedTags
      * @return Tag
      */
-    public function setRelatedTags($relatedTags)
+    public function setRelatedTags ($relatedTags)
     {
         $this->relatedTags = $relatedTags;
         return $this;
@@ -316,7 +316,7 @@ class Tag extends Base
     /**
      * @return string
      */
-    public function getStatus()
+    public function getStatus ()
     {
         return $this->status;
     }
@@ -325,7 +325,7 @@ class Tag extends Base
      * @param string $status
      * @return Tag
      */
-    public function setStatus($status)
+    public function setStatus ($status)
     {
         $this->status = $status;
         return $this;
@@ -334,7 +334,7 @@ class Tag extends Base
     /**
      * @return string
      */
-    public function getTranslatedDescription()
+    public function getTranslatedDescription ()
     {
         return $this->translatedDescription;
     }
@@ -343,7 +343,7 @@ class Tag extends Base
      * @param string $translatedDescription
      * @return Tag
      */
-    public function setTranslatedDescription($translatedDescription)
+    public function setTranslatedDescription ($translatedDescription)
     {
         $this->translatedDescription = $translatedDescription;
         return $this;
@@ -352,7 +352,7 @@ class Tag extends Base
     /**
      * @return string
      */
-    public function getUrlSlug()
+    public function getUrlSlug ()
     {
         return $this->urlSlug;
     }
@@ -361,7 +361,7 @@ class Tag extends Base
      * @param string $urlSlug
      * @return Tag
      */
-    public function setUrlSlug($urlSlug)
+    public function setUrlSlug ($urlSlug)
     {
         $this->urlSlug = $urlSlug;
         return $this;
@@ -370,7 +370,7 @@ class Tag extends Base
     /**
      * @return int
      */
-    public function getUsageCount()
+    public function getUsageCount ()
     {
         return $this->usageCount;
     }
@@ -379,7 +379,7 @@ class Tag extends Base
      * @param int $usageCount
      * @return Tag
      */
-    public function setUsageCount($usageCount)
+    public function setUsageCount ($usageCount)
     {
         $this->usageCount = $usageCount;
         return $this;
@@ -388,7 +388,7 @@ class Tag extends Base
     /**
      * @return int
      */
-    public function getVersion()
+    public function getVersion ()
     {
         return $this->version;
     }
@@ -397,7 +397,7 @@ class Tag extends Base
      * @param int $version
      * @return Tag
      */
-    public function setVersion($version)
+    public function setVersion ($version)
     {
         $this->version = $version;
         return $this;
@@ -406,7 +406,7 @@ class Tag extends Base
     /**
      * @return array
      */
-    public function getWebLinks()
+    public function getWebLinks ()
     {
         return $this->webLinks;
     }
@@ -415,7 +415,7 @@ class Tag extends Base
      * @param array $webLinks
      * @return Tag
      */
-    public function setWebLinks($webLinks)
+    public function setWebLinks ($webLinks)
     {
         $this->webLinks = $webLinks;
         return $this;

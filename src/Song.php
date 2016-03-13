@@ -1,12 +1,12 @@
 <?php
 /**
- * {LICENSE}
- */
+     * {LICENSE}
+     */
 namespace Pbxg33k\VocaDB;
 
 class Song extends Base
 {
-	public $endpoint = 'songs';
+    public $endpoint = 'songs';
 
-	public $fields = ['Albums', 'Artists', 'Names', 'PVs', 'Tags', 'ThumbUrl', 'WebLinks'];
+    public $fields = ['Albums', 'Artists', 'Names', 'PVs', 'Tags', 'ThumbUrl', 'WebLinks'];
 }

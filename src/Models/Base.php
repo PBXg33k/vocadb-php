@@ -10,12 +10,12 @@ class Base
      * Converts an object from the api to model(s) loaded in current context
      * 
      * @param object $response 
-     * @return object Models extending Base
+     * @return Base Models extending Base
      */
-    public function fromApi($response)
+    public function fromApi ($response)
     {
-        if(is_array($response)) {
-            if(isset($response['items'])) {
+        if (is_array($response)) {
+            if (isset($response['items'])) {
                 $response = $response['items'][0];
             }
         }
