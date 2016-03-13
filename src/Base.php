@@ -42,7 +42,7 @@ class Base
     }
 
     /**
-     * @param null|array $arguments
+     * @param mixed $arguments
      * @return mixed
      * @throws \Exception
      */
@@ -102,7 +102,6 @@ class Base
         $response = $this->client->get($endpoint, $arguments);
         switch($response->getStatusCode()) {
             case 200:
-                // $response_obj = $response->json();
                 $response_obj = (array)json_decode($response->getBody());
                 $collection = new $model_class_name();
                 $collection->fromApi($response_obj);
@@ -123,7 +122,7 @@ class Base
     }
 
     /**
-     * @param $name
+     * @param mixed $name
      * @return mixed
      * @throws \Exception
      */
