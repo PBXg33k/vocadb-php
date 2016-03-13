@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/PBXg33k/vocadb-php.svg)](https://travis-ci.org/PBXg33k/vocadb-php)
+[![Build Status](https://travis-ci.org/PBXg33k/vocadb-php.svg)](https://travis-ci.org/PBXg33k/vocadb-php) ![Scrutinizer quality score](https://scrutinizer-ci.com/g/PBXg33k/vocadb-php/badges/quality-score.png?b=master) [![Latest Stable Version](https://poser.pugx.org/pbxg33k/vocadb/v/stable)](https://packagist.org/packages/pbxg33k/vocadb) [![Total Downloads](https://poser.pugx.org/pbxg33k/vocadb/downloads)](https://packagist.org/packages/pbxg33k/vocadb) [![Latest Unstable Version](https://poser.pugx.org/pbxg33k/vocadb/v/unstable)](https://packagist.org/packages/pbxg33k/vocadb) [![License](https://poser.pugx.org/pbxg33k/vocadb/license)](https://packagist.org/packages/pbxg33k/vocadb)
 # VocaDB API PHP Client #
 
 **NOTE: This is an early alpha release which is still in development!**
