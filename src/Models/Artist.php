@@ -17,7 +17,7 @@ class Artist extends Base
 
 	/**
 	 * 
-	 * @var Pbxg33k\VocaDB\Models\Artist
+	 * @var Artist
 	 */
 	protected $baseVoicebank;
 
@@ -47,7 +47,7 @@ class Artist extends Base
 
 	/**
 	 * 
-	 * @var Pbxg33k\VocaDB\Models\Collections\ArtistCollection
+	 * @var Collections\ArtistCollection
 	 */
 	protected $groups;
 	/**
@@ -70,7 +70,7 @@ class Artist extends Base
 
 	/**
 	 * 
-	 * @var Pbxg33k\VocaDB\Models\Collections\ArtistCollection
+	 * @var Collections\ArtistCollection
 	 */
 	protected $members;
 
@@ -159,7 +159,7 @@ class Artist extends Base
 	}
 
 	/**
-	 * @return Pbxg33k\VocaDB\Models\Artist
+	 * @return Artist
 	 */
 	public function getBaseVoicebank()
 	{
@@ -167,7 +167,7 @@ class Artist extends Base
 	}
 
 	/**
-	 * @param Pbxg33k\VocaDB\Models\Artist $baseVoicebank
+	 * @param Artist $baseVoicebank
 	 * @return Artist
 	 */
 	public function setBaseVoicebank(Artist $baseVoicebank)
@@ -249,7 +249,7 @@ class Artist extends Base
 	}
 
 	/**
-	 * @return Pbxg33k\VocaDB\Models\Collections\ArtistCollection
+	 * @return Collections\ArtistCollection
 	 */
 	public function getGroups()
 	{
@@ -257,10 +257,10 @@ class Artist extends Base
 	}
 
 	/**
-	 * @param Pbxg33k\VocaDB\Models\Collections\ArtistCollection $groups
+	 * @param Collections\ArtistCollection $groups
 	 * @return Artist
 	 */
-	public function setGroups(ArtistCollection $groups)
+	public function setGroups(Collections\ArtistCollection $groups)
 	{
 		$this->groups = $groups;
 		return $this;
@@ -321,7 +321,7 @@ class Artist extends Base
 	}
 
 	/**
-	 * @return Pbxg33k\VocaDB\Models\Collections\ArtistCollection
+	 * @return Collections\ArtistCollection
 	 */
 	public function getMembers()
 	{
@@ -329,10 +329,10 @@ class Artist extends Base
 	}
 
 	/**
-	 * @param Pbxg33k\VocaDB\Models\Collections\ArtistCollection $members
+	 * @param Collections\ArtistCollection $members
 	 * @return Artist
 	 */
-	public function setMembers(ArtistCollection $members)
+	public function setMembers(Collections\ArtistCollection $members)
 	{
 		$this->members = $members;
 		return $this;
