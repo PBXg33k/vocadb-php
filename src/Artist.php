@@ -4,6 +4,7 @@
  */
 namespace Pbxg33k\VocaDB;
 
+use Pbxg33k\VocaDB\Models\Artist as ArtistModel;
 /**
  * Artist class
  * 
@@ -25,8 +26,8 @@ class Artist extends Base
 	/**
 	 * @return mixed
 	 */
-	public function albums()
+	public function albums(ArtistModel $artist)
 	{
-		return $this->client->album->get(['artistId' => $this->id]);
+		return $this->client->album->get(['artistId' => $artist->getId()]);
 	}
 }
