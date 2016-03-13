@@ -47,7 +47,7 @@ class Artist extends Base
 
 	/**
 	 * 
-	 * @var ArtistCollection
+	 * @var Collections\ArtistCollection
 	 */
 	protected $groups;
 	/**
