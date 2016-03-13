@@ -1,32 +1,62 @@
 <?php
 namespace Pbxg33k\VocaDB;
 
+/**
+ * Class Base
+ * @package Pbxg33k\VocaDB
+ */
 class Base
 {
-	protected $client;
+    /**
+     * @var Client
+     */
+    protected $client;
 
-	public function __construct(Client $client)
-	{
-		$this->client = $client;
-	}
+    /**
+     * @var string
+     */
+    public $endpoint;
 
-	public function getComplete($arguments = null)
-	{
-		return $this->get(array_merge((array)$arguments, ['fields' => implode(',', $this->fields)]));
-	}
+    /**
+     * @var string
+     */
+    public $fields;
 
-	public function get($arguments = null)
-	{
-		$full_class = explode('\\',get_called_class());
-		$class = end($full_class);
-		$model_class_name = sprintf('Pbxg33k\\VocaDB\\Models\\%s', $class);
-		$model_collection_name = sprintf('Pbxg33k\\VocaDB\\Models\\Collections\\%sCollection', $class);
-        
-		$response = $this->client->get($this->endpoint, $arguments);
-		switch($response->getStatusCode()) {
-			case 200:
-				// $response_obj = $response->json();
-				$response_obj = (array)json_decode($response->getBody());
+    /**
+     * Base constructor.
+     * @param Client $client
+     */
+    public function __construct(Client $client)
+    {
+        $this->client = $client;
+    }
+
+    /**
+     * @param null|array $arguments
+     * @return mixed
+     * @throws \Exception
+     */
+    public function getComplete($arguments = null)
+    {
+        return $this->get(array_merge((array)$arguments, ['fields' => implode(',', $this->fields)]));
+    }
+
+    /**
+     * @param null|array $arguments
+     * @return mixed
+     * @throws \Exception
+     */
+    public function get($arguments = null)
+    {
+        $full_class = explode('\\',get_called_class());
+        $class = end($full_class);
+        $model_class_name = sprintf('Pbxg33k\\VocaDB\\Models\\%s', $class);
+        $model_collection_name = sprintf('Pbxg33k\\VocaDB\\Models\\Collections\\%sCollection', $class);
+
+        $response = $this->client->get($this->endpoint, $arguments);
+        switch($response->getStatusCode()) {
+            case 200:
+                $response_obj = (array)json_decode($response->getBody());
                 $collection = new $model_collection_name();
                 if(count($response_obj['items'])) {
                     foreach($response_obj['items'] as $item) {
@@ -37,52 +67,68 @@ class Base
                 } else {
                     throw new \Exception('No results');
                 }
-                
-				return $collection;
-				break;
-			default:
-				throw new \Exception('HTTP ERROR OCCURED');
-				break;
-		}
-	}
 
-	public function singleComplete($id, $arguments = null)
-	{
-		return $this->single($id, array_merge((array)$arguments, ['fields' => implode(',', $this->fields)]));
-	}
+                return $collection;
+            default:
+                throw new \Exception('HTTP ERROR OCCURED');
+        }
+    }
 
-	public function single($id, $arguments = null)
-	{
-		$full_class = explode('\\',get_called_class());
-		$class = end($full_class);
-		$model_class_name = sprintf('Pbxg33k\\VocaDB\\Models\\%s', $class);
-		$model_collection_name = sprintf('Pbxg33k\\VocaDB\\Models\\Collections\\%sCollection', $class);
-		
-		$endpoint = $this->endpoint.'/'.$id;
+    /**
+     * @param $id
+     * @param null|array $arguments
+     * @return mixed
+     * @throws \Exception
+     */
+    public function singleComplete($id, $arguments = null)
+    {
+        return $this->single($id, array_merge((array)$arguments, ['fields' => implode(',', $this->fields)]));
+    }
 
-		$response = $this->client->get($endpoint, $arguments);
-		switch($response->getStatusCode()) {
-			case 200:
-				// $response_obj = $response->json();
-				$response_obj = (array)json_decode($response->getBody());
+    /**
+     * @param $id
+     * @param null|array $arguments
+     * @return mixed
+     * @throws \Exception
+     */
+    public function single($id, $arguments = null)
+    {
+        $full_class = explode('\\',get_called_class());
+        $class = end($full_class);
+        $model_class_name = sprintf('Pbxg33k\\VocaDB\\Models\\%s', $class);
+
+        $endpoint = $this->endpoint.'/'.$id;
+
+        $response = $this->client->get($endpoint, $arguments);
+        switch($response->getStatusCode()) {
+            case 200:
+                // $response_obj = $response->json();
+                $response_obj = (array)json_decode($response->getBody());
                 $collection = new $model_class_name();
                 $collection->fromApi($response_obj);
-				return $collection;
+                return $collection;
+            default:
+                throw new \Exception('HTTP ERROR OCCURED');
+        }
+    }
 
-				break;
-			default:
-				throw new \Exception('HTTP ERROR OCCURED');
-				break;
-		}
-	}
+    /**
+     * @param integer $id
+     * @return integer
+     * @throws \Exception
+     */
+    public function getById($id)
+    {
+        return $this->get(sprintf('/%d',$id));
+    }
 
-	public function getById($id)
-	{
-		return $this->get(sprintf('/%s',$id));
-	}
-
-	public function getByName($name)
-	{
-		return $this->get(['query' => $name]);
-	}
+    /**
+     * @param $name
+     * @return mixed
+     * @throws \Exception
+     */
+    public function getByName($name)
+    {
+        return $this->get(['query' => $name]);
+    }
 }

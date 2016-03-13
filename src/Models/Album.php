@@ -11,7 +11,7 @@ class Album extends Base
 
 	/**
 	 * 
-	 * @var Pbxg33k\VocaDB\Models\Collections\ArtistCollection
+	 * @var Collections\ArtistCollection
 	 */
 	protected $artists;
 
@@ -125,7 +125,7 @@ class Album extends Base
 
 	/**
 	 * 
-	 * @var Pbxg33k\VocaDB\Models\ReleaseEvent
+	 * @var ReleaseEvent
 	 */
 	protected $releaseEvent;
 
@@ -143,7 +143,7 @@ class Album extends Base
 
 	/**
 	 * 
-	 * @var Pbxg33k\VocaDB\Models\Collections\TrackCollection
+	 * @var Collections\TrackCollection
 	 */
 	protected $tracks;
 
@@ -178,7 +178,7 @@ class Album extends Base
 	}
 
 	/**
-	 * @return Pbxg33k\VocaDB\Models\Collections\ArtistCollection
+	 * @return Collections\ArtistCollection
 	 */
 	public function getArtists()
 	{
@@ -186,10 +186,10 @@ class Album extends Base
 	}
 
 	/**
-	 * @param Pbxg33k\VocaDB\Models\Collections\ArtistCollection $artists
+	 * @param Collections\ArtistCollection $artists
 	 * @return Album
 	 */
-	public function setArtists(ArtistCollection $artists)
+	public function setArtists(Collections\ArtistCollection $artists)
 	{
 		$this->artists = $artists;
 		return $this;
@@ -520,7 +520,7 @@ class Album extends Base
 	}
 
 	/**
-	 * @return Pbxg33k\VocaDB\Models\ReleaseEvent
+	 * @return ReleaseEvent
 	 */
 	public function getReleaseEvent()
 	{
@@ -528,7 +528,7 @@ class Album extends Base
 	}
 
 	/**
-	 * @param Pbxg33k\VocaDB\Models\ReleaseEvent $releaseEvent
+	 * @param ReleaseEvent $releaseEvent
 	 * @return Album
 	 */
 	public function setReleaseEvent(ReleaseEvent $releaseEvent)
@@ -574,7 +574,7 @@ class Album extends Base
 	}
 
 	/**
-	 * @return Pbxg33k\VocaDB\Models\Collections\TrackCollection
+	 * @return Collections\TrackCollection
 	 */
 	public function getTracks()
 	{
@@ -582,10 +582,10 @@ class Album extends Base
 	}
 
 	/**
-	 * @param Pbxg33k\VocaDB\Models\Collections\TrackCollection $tracks
+	 * @param Collections\TrackCollection $tracks
 	 * @return Album
 	 */
-	public function setTracks(TrackCollection $tracks)
+	public function setTracks(Collections\TrackCollection $tracks)
 	{
 		$this->tracks = $tracks;
 		return $this;

@@ -23,7 +23,7 @@ class Track extends Base
 
 	/**
 	 * 
-	 * @var Pbxg33k\VocaDB\Models\Song
+	 * @var Song
 	 */
 	protected $song;
 
@@ -35,7 +35,7 @@ class Track extends Base
 
 	/**
 	 * 
-	 * @var Pbxg33k\VocaDB\Models\Album
+	 * @var Album
 	 */
 	protected $album;
 
@@ -94,7 +94,7 @@ class Track extends Base
     }
 
     /**
-     * @return Pbxg33k\VocaDB\Models\Song
+     * @return Song
      */
     public function getSong()
     {
@@ -102,7 +102,7 @@ class Track extends Base
     }
 
     /**
-     * @param Pbxg33k\VocaDB\Models\Song $song
+     * @param Song $song
      * @return Track
      */
     public function setSong(Song $song)
@@ -130,7 +130,7 @@ class Track extends Base
     }
 
     /**
-     * @return Pbxg33k\VocaDB\Models\Album
+     * @return Album
      */
     public function getAlbum()
     {
@@ -138,7 +138,7 @@ class Track extends Base
     }
 
     /**
-     * @param Pbxg33k\VocaDB\Models\Album $album
+     * @param Album $album
      * @return Track
      */
     public function setAlbum(Album $album)
