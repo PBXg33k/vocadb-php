@@ -12,7 +12,13 @@ namespace Pbxg33k\VocaDB;
  */
 class Album extends Base
 {
+    /**
+     * {@inheritdoc}
+     */
     public $endpoint = 'albums';
 
+    /**
+     * {@inheritdoc}
+     */
     public $fields = ['AdditionalNames', 'Artists', 'Identifiers', 'MainPicture', 'Names', 'PVs', 'Tags', 'Tracks', 'WebLinks'];
 }

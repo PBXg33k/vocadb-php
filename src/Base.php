@@ -8,22 +8,29 @@ namespace Pbxg33k\VocaDB;
 class Base
 {
     /**
+     * The API Client
+     *
      * @var Client
      */
     protected $client;
 
     /**
+     * The service endpoint
+     *
      * @var string
      */
     public $endpoint;
 
     /**
+     * Available fields for the endpoint
+     *
      * @var string
      */
     public $fields;
 
     /**
      * Base constructor.
+     *
      * @param Client $client
      */
     public function __construct(Client $client)
@@ -32,8 +39,12 @@ class Base
     }
 
     /**
+     * Get result as a complete object
+     *
      * @param null|array $arguments
+     * 
      * @return mixed
+     *
      * @throws \Exception
      */
     public function getComplete($arguments = null)
@@ -42,9 +53,14 @@ class Base
     }
 
     /**
+     * Get result as simple object
+     *
      * @param mixed $arguments
+     *
      * @return mixed
-     * @throws \Exception
+     *
+     * @throws \Exception if there are no results
+     * @throws \Exception if an HTTP Error occured
      */
     public function get($arguments = null)
     {
@@ -75,9 +91,13 @@ class Base
     }
 
     /**
+     * Get single result as complete object
+     *
      * @param $id
      * @param null|array $arguments
+     *
      * @return mixed
+     *
      * @throws \Exception
      */
     public function singleComplete($id, $arguments = null)
@@ -86,9 +106,13 @@ class Base
     }
 
     /**
+     * Get single result
+     *
      * @param $id
      * @param null|array $arguments
+     *
      * @return mixed
+     *
      * @throws \Exception
      */
     public function single($id, $arguments = null)
@@ -112,8 +136,12 @@ class Base
     }
 
     /**
+     * Get result by id
+     *
      * @param integer $id
+     *
      * @return integer
+     *
      * @throws \Exception
      */
     public function getById($id)
@@ -122,8 +150,12 @@ class Base
     }
 
     /**
+     * Get result by name
+     *
      * @param mixed $name
+     *
      * @return mixed
+     *
      * @throws \Exception
      */
     public function getByName($name)
