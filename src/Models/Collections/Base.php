@@ -64,6 +64,7 @@ class Base
 			return array_values($this->collection)[0];
 		}
 
+		/** @todo Replace with decent Exception */
 		throw new Exception();
 	}
 }

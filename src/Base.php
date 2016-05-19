@@ -81,11 +81,13 @@ class Base
                         $collection->add($obj);
                     }
                 } else {
+                    /** @todo Replace with decent Exception */
                     throw new \Exception('No results');
                 }
 
                 return $collection;
             default:
+                /** @todo Replace with decent Exception */
                 throw new \Exception('HTTP ERROR OCCURED');
         }
     }
@@ -131,6 +133,7 @@ class Base
                 $collection->fromApi($response_obj);
                 return $collection;
             default:
+                /** @todo Replace with decent Exception */
                 throw new \Exception('HTTP ERROR OCCURED');
         }
     }
