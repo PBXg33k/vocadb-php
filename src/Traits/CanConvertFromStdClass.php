@@ -65,7 +65,7 @@ trait CanConvertFromStdClass
                 && $reflectionProperty = $reflection->getProperty($propertyName)
             ) {
                 // Get the expected property class from the property's DocBlock
-                if ($propertyClassName = $this->getClassFromDocComment($reflectionProperty->getDocComment())) {
+                if ($propertyClassName = $this->getClassFromDocComment($reflectionProperty->getDocComment(), true, $reflection)) {
 
                     // Set argument for constructor (if any), in case we're dealing with an object (IE: DateTime)
                     $this->objectConstructorArguments = (in_array($propertyClassName, $this->giveDataInConstructor))
@@ -81,7 +81,7 @@ trait CanConvertFromStdClass
                         $this->checkObjectForErrors($object, TRUE);
 
                         if ($object) {
-                            if (method_exists($object, 'fromClass')) {
+                            if (method_exists($object, 'fromClass') && (is_array($itemValue) || is_object($itemValue))) {
                                 $object->fromClass($itemValue);
                             }
                             // We're done. Assign the result to the propery of $this
@@ -149,39 +149,22 @@ trait CanConvertFromStdClass
      *
      * @param string $comment the docblock
      * @param bool $includeNamespaces
-     * @return bool|string Classname if a match is found, otherwise FALSE
+     * @param null|\ReflectionClass $reflectionClass
+     *
+     * @return bool|string
      */
-    private function getClassFromDocComment ($comment, $includeNamespaces = true)
+    private function getClassFromDocComment ($comment, $includeNamespaces = true, $reflectionClass = null)
     {
         if (preg_match('~\@var[\s]+([A-Za-z0-9\\\\]+)~', $comment, $matches)) {
-            if ($includeNamespaces)
-                return $matches[1];
-            else
+            if ($includeNamespaces) {
+                if($reflectionClass instanceof \ReflectionClass && !in_array($matches[1], $this->nonObjectTypes)) {
+                    return '\\'.$reflectionClass->getNamespaceName() . '\\' . $matches[1];
+                } else {
+                    return $matches[1];
+                }
+            } else {
                 return join('', array_slice(explode('\\', $matches[1]), -1));
-        }
-
-        return FALSE;
-    }
-
-    /**
-     * Returns the target entity from Doctrine's many to many relation
-     *
-     * @param string $comment Annotation for the property
-     * @return string|false Classname if a match is found, otherwise FALSE
-     */
-    private function getEntityFromDoctrineManyToMany ($comment)
-    {
-        if (preg_match('~@ORM\\\\ManyToMany\((:.*?)?targetEntity=\"([A-Za-z0-9\\\\]+)\"~', $comment, $matches)) {
-            return $matches[2];
-        }
-
-        return FALSE;
-    }
-
-    private function getJoinColumnFromDoctrineAnnotation ($comment)
-    {
-        if (preg_match('~@ORM\\\\JoinColumn\((:.*?)?name=\"([a-zA-Z0-9_]+)\"~', $comment, $matches)) {
-            return $matches[2];
+            }
         }
 
         return FALSE;
