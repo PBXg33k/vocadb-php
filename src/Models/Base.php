@@ -1,11 +1,11 @@
 <?php
 namespace Pbxg33k\VocaDB\Models;
 
-use Pbxg33k\VocaDB\Traits\CanConvertFromStdClass;
+use Pbxg33k\Traits\HydratableTrait;
 
 class Base
 {
-    use CanConvertFromStdClass;
+    use HydratableTrait;
     /**
      * Converts an object from the api to model(s) loaded in current context
      * 
@@ -20,7 +20,7 @@ class Base
             }
         }
 
-        $this->fromClass($response);
+        $this->hydrateClass($response);
         return $this;
     }
 }
