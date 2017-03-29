@@ -142,27 +142,29 @@ class Base
      * Get result by id
      *
      * @param integer $id
+     * @param bool    $complete
      *
      * @return integer
      *
      * @throws \Exception
      */
-    public function getById($id)
+    public function getById($id, $complete = false)
     {
-        return $this->get(sprintf('/%d',$id));
+        return ($complete === true) ? $this->getComplete(sprintf('/%d', $id)) : $this->get(sprintf('/%d',$id));
     }
 
     /**
      * Get result by name
      *
      * @param mixed $name
+     * @param bool  $complete
      *
      * @return mixed
      *
      * @throws \Exception
      */
-    public function getByName($name)
+    public function getByName($name, $complete = false)
     {
-        return $this->get(['query' => $name]);
+        return ($complete === true) ? $this->getComplete(['query' => $name]) : $this->get(['query' => $name]);
     }
 }
